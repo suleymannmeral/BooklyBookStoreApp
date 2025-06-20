@@ -10,3 +10,4 @@ C:\Users\suley\source\repos\BooklyBookStoreApp\BooklyBookStoreApp.Domain\obj\Deb
 C:\Users\suley\source\repos\BooklyBookStoreApp\BooklyBookStoreApp.Domain\obj\Debug\net8.0\refint\BooklyBookStoreApp.Domain.dll
 C:\Users\suley\source\repos\BooklyBookStoreApp\BooklyBookStoreApp.Domain\obj\Debug\net8.0\BooklyBookStoreApp.Domain.pdb
 C:\Users\suley\source\repos\BooklyBookStoreApp\BooklyBookStoreApp.Domain\obj\Debug\net8.0\ref\BooklyBookStoreApp.Domain.dll
+C:\Users\suley\source\repos\BooklyBookStoreApp\BooklyBookStoreApp.Domain\obj\Debug\net8.0\BooklyBookStoreApp.Domain.sourcelink.json

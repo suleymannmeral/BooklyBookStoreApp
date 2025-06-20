@@ -1,0 +1,13 @@
+C:\Users\suley\source\repos\BooklyBookStoreApp\BooklyBookStoreApp.Presentation\bin\Debug\net8.0\BooklyBookStoreApp.Presentation.deps.json
+C:\Users\suley\source\repos\BooklyBookStoreApp\BooklyBookStoreApp.Presentation\bin\Debug\net8.0\BooklyBookStoreApp.Presentation.dll
+C:\Users\suley\source\repos\BooklyBookStoreApp\BooklyBookStoreApp.Presentation\bin\Debug\net8.0\BooklyBookStoreApp.Presentation.pdb
+C:\Users\suley\source\repos\BooklyBookStoreApp\BooklyBookStoreApp.Presentation\obj\Debug\net8.0\BooklyBookStoreApp.Presentation.csproj.AssemblyReference.cache
+C:\Users\suley\source\repos\BooklyBookStoreApp\BooklyBookStoreApp.Presentation\obj\Debug\net8.0\BooklyBookStoreApp.Presentation.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\suley\source\repos\BooklyBookStoreApp\BooklyBookStoreApp.Presentation\obj\Debug\net8.0\BooklyBookStoreApp.Presentation.AssemblyInfoInputs.cache
+C:\Users\suley\source\repos\BooklyBookStoreApp\BooklyBookStoreApp.Presentation\obj\Debug\net8.0\BooklyBookStoreApp.Presentation.AssemblyInfo.cs
+C:\Users\suley\source\repos\BooklyBookStoreApp\BooklyBookStoreApp.Presentation\obj\Debug\net8.0\BooklyBookStoreApp.Presentation.csproj.CoreCompileInputs.cache
+C:\Users\suley\source\repos\BooklyBookStoreApp\BooklyBookStoreApp.Presentation\obj\Debug\net8.0\BooklyBookStoreApp.Presentation.sourcelink.json
+C:\Users\suley\source\repos\BooklyBookStoreApp\BooklyBookStoreApp.Presentation\obj\Debug\net8.0\BooklyBookStoreApp.Presentation.dll
+C:\Users\suley\source\repos\BooklyBookStoreApp\BooklyBookStoreApp.Presentation\obj\Debug\net8.0\refint\BooklyBookStoreApp.Presentation.dll
+C:\Users\suley\source\repos\BooklyBookStoreApp\BooklyBookStoreApp.Presentation\obj\Debug\net8.0\BooklyBookStoreApp.Presentation.pdb
+C:\Users\suley\source\repos\BooklyBookStoreApp\BooklyBookStoreApp.Presentation\obj\Debug\net8.0\ref\BooklyBookStoreApp.Presentation.dll

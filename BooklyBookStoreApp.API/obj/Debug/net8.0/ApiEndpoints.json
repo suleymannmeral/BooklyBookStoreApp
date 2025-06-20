@@ -1,0 +1,22 @@
+[
+  {
+    "ContainingType": "BooklyBookStoreApp.Presentation.Controllers.TestController",
+    "Method": "Get",
+    "RelativePath": "api/Test",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BooklyBookStoreApp.Presentation.Controllers.TestController",
+    "Method": "GetBeyza",
+    "RelativePath": "api/Test/Beyza",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  }
+]

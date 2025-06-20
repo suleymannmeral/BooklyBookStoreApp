@@ -15,3 +15,4 @@ C:\Users\suley\source\repos\BooklyBookStoreApp\BooklyBookStoreApp.Persistence\ob
 C:\Users\suley\source\repos\BooklyBookStoreApp\BooklyBookStoreApp.Persistence\obj\Debug\net8.0\BooklyBookStoreApp.Persistence.pdb
 C:\Users\suley\source\repos\BooklyBookStoreApp\BooklyBookStoreApp.Persistence\obj\Debug\net8.0\BooklyBookStoreApp.Persistence.genruntimeconfig.cache
 C:\Users\suley\source\repos\BooklyBookStoreApp\BooklyBookStoreApp.Persistence\obj\Debug\net8.0\ref\BooklyBookStoreApp.Persistence.dll
+C:\Users\suley\source\repos\BooklyBookStoreApp\BooklyBookStoreApp.Persistence\obj\Debug\net8.0\BooklyBookStoreApp.Persistence.sourcelink.json

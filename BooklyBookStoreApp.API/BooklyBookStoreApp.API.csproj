@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
-    <Nullable>enable</Nullable>
+    <Nullable>disable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
@@ -17,6 +17,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\BooklyBookStoreApp.Persistence\BooklyBookStoreApp.Persistence.csproj" />
+    <ProjectReference Include="..\BooklyBookStoreApp.Presentation\BooklyBookStoreApp.Presentation.csproj" />
   </ItemGroup>
 
 </Project>

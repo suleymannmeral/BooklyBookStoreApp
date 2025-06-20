@@ -13,3 +13,4 @@ C:\Users\suley\source\repos\BooklyBookStoreApp\BooklyBookStoreApp.Infrastructure
 C:\Users\suley\source\repos\BooklyBookStoreApp\BooklyBookStoreApp.Infrastructure\obj\Debug\net8.0\refint\BooklyBookStoreApp.Infrastructure.dll
 C:\Users\suley\source\repos\BooklyBookStoreApp\BooklyBookStoreApp.Infrastructure\obj\Debug\net8.0\BooklyBookStoreApp.Infrastructure.pdb
 C:\Users\suley\source\repos\BooklyBookStoreApp\BooklyBookStoreApp.Infrastructure\obj\Debug\net8.0\ref\BooklyBookStoreApp.Infrastructure.dll
+C:\Users\suley\source\repos\BooklyBookStoreApp\BooklyBookStoreApp.Infrastructure\obj\Debug\net8.0\BooklyBookStoreApp.Infrastructure.sourcelink.json
