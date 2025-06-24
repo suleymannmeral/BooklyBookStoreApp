@@ -83,3 +83,4 @@ C:\Users\suley\source\repos\BooklyBookStoreApp\BooklyBookStoreApp.Ui\obj\Debug\n
 C:\Users\suley\source\repos\BooklyBookStoreApp\BooklyBookStoreApp.Ui\obj\Debug\net8.0\BooklyBookStoreApp.Ui.pdb
 C:\Users\suley\source\repos\BooklyBookStoreApp\BooklyBookStoreApp.Ui\obj\Debug\net8.0\BooklyBookStoreApp.Ui.genruntimeconfig.cache
 C:\Users\suley\source\repos\BooklyBookStoreApp\BooklyBookStoreApp.Ui\obj\Debug\net8.0\ref\BooklyBookStoreApp.Ui.dll
+C:\Users\suley\source\repos\BooklyBookStoreApp\BooklyBookStoreApp.Ui\obj\Debug\net8.0\BooklyBookStoreApp.Ui.sourcelink.json

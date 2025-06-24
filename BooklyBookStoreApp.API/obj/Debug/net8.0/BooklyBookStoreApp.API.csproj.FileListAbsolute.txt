@@ -180,3 +180,5 @@ C:\Users\suley\source\repos\BooklyBookStoreApp\BooklyBookStoreApp.API\bin\Debug\
 C:\Users\suley\source\repos\BooklyBookStoreApp\BooklyBookStoreApp.API\bin\Debug\net8.0\Microsoft.Extensions.ObjectPool.dll
 C:\Users\suley\source\repos\BooklyBookStoreApp\BooklyBookStoreApp.API\bin\Debug\net8.0\BooklyBookStoreApp.Presentation.dll
 C:\Users\suley\source\repos\BooklyBookStoreApp\BooklyBookStoreApp.API\bin\Debug\net8.0\BooklyBookStoreApp.Presentation.pdb
+C:\Users\suley\source\repos\BooklyBookStoreApp\BooklyBookStoreApp.API\bin\Debug\net8.0\BooklyBookStoreApp.Application.dll
+C:\Users\suley\source\repos\BooklyBookStoreApp\BooklyBookStoreApp.API\bin\Debug\net8.0\BooklyBookStoreApp.Application.pdb

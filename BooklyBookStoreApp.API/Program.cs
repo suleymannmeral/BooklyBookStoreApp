@@ -1,5 +1,7 @@
+using BooklyBookStoreApp.Application.Services;
 using BooklyBookStoreApp.Domain.Entitites;
 using BooklyBookStoreApp.Persistence.Context;
+using BooklyBookStoreApp.Persistence.Services;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
@@ -7,7 +9,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
-
+builder.Services.AddScoped<IBookService, BookService>();
 // Connection string
 string connectionString = builder.Configuration.GetConnectionString("SqlServer");
 
@@ -27,8 +29,18 @@ builder.Services.AddControllers()
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowAll",
+        policyBuilder => policyBuilder.AllowAnyOrigin()
+                                      .AllowAnyMethod()
+                                      .AllowAnyHeader());
+});
 
 var app = builder.Build();
+
+app.UseCors("AllowAll");
+
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

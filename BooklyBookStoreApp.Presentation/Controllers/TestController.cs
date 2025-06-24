@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using BooklyBookStoreApp.Application;
+using BooklyBookStoreApp.Application.Services;
+using Microsoft.AspNetCore.Mvc;
 namespace BooklyBookStoreApp.Presentation.Controllers
 {
 
@@ -6,16 +8,23 @@ namespace BooklyBookStoreApp.Presentation.Controllers
     [Route("api/[controller]")]
     public sealed class TestController:ControllerBase
     {
-        [HttpGet]
-        public IActionResult Get()
+
+       private readonly IBookService _bookService;
+
+
+        public TestController(IBookService bookService)
         {
-            return Ok("Api Test is successfull");
+            _bookService = bookService;
         }
-        [HttpGet("Beyza")]
-        public IActionResult GetBeyza()
+
+        [HttpPost]
+        public async Task<IActionResult> Create(Dto dto)
         {
-            return Ok("Beyza");
+           await _bookService.CreateAsync(dto);
+            return Ok(dto);
+            
         }
+       
 
     }
 }

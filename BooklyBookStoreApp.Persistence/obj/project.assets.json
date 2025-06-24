@@ -1674,6 +1674,19 @@
           }
         }
       },
+      "BooklyBookStoreApp.Application/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "BooklyBookStoreApp.Domain": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/BooklyBookStoreApp.Application.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/BooklyBookStoreApp.Application.dll": {}
+        }
+      },
       "BooklyBookStoreApp.Domain/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
@@ -4865,6 +4878,11 @@
         "useSharedDesignerContext.txt"
       ]
     },
+    "BooklyBookStoreApp.Application/1.0.0": {
+      "type": "project",
+      "path": "../BooklyBookStoreApp.Application/BooklyBookStoreApp.Application.csproj",
+      "msbuildProject": "../BooklyBookStoreApp.Application/BooklyBookStoreApp.Application.csproj"
+    },
     "BooklyBookStoreApp.Domain/1.0.0": {
       "type": "project",
       "path": "../BooklyBookStoreApp.Domain/BooklyBookStoreApp.Domain.csproj",
@@ -4873,6 +4891,7 @@
   },
   "projectFileDependencyGroups": {
     "net8.0": [
+      "BooklyBookStoreApp.Application >= 1.0.0",
       "BooklyBookStoreApp.Domain >= 1.0.0",
       "Microsoft.AspNetCore.Identity.EntityFrameworkCore >= 8.0.13",
       "Microsoft.EntityFrameworkCore >= 9.0.6",
@@ -4912,6 +4931,9 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
+            "C:\\Users\\suley\\source\\repos\\BooklyBookStoreApp\\BooklyBookStoreApp.Application\\BooklyBookStoreApp.Application.csproj": {
+              "projectPath": "C:\\Users\\suley\\source\\repos\\BooklyBookStoreApp\\BooklyBookStoreApp.Application\\BooklyBookStoreApp.Application.csproj"
+            },
             "C:\\Users\\suley\\source\\repos\\BooklyBookStoreApp\\BooklyBookStoreApp.Domain\\BooklyBookStoreApp.Domain.csproj": {
               "projectPath": "C:\\Users\\suley\\source\\repos\\BooklyBookStoreApp\\BooklyBookStoreApp.Domain\\BooklyBookStoreApp.Domain.csproj"
             }

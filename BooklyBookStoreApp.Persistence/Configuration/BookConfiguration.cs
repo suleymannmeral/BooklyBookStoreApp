@@ -28,7 +28,7 @@ namespace BooklyBookStoreApp.Persistence.Configuration
              // Cateogory (many to one)
              builder.HasOne(b=>b.Category)
                 .WithMany(c=>c.Books)
-                .HasForeignKey(c=>c.CategoryID)
+                .HasForeignKey(b=>b.CategoryID)
                 .OnDelete(DeleteBehavior.Cascade);
 
             // Favorite (one to many)

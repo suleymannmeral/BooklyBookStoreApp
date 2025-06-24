@@ -1,22 +1,18 @@
 [
   {
     "ContainingType": "BooklyBookStoreApp.Presentation.Controllers.TestController",
-    "Method": "Get",
+    "Method": "Create",
     "RelativePath": "api/Test",
-    "HttpMethod": "GET",
+    "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "BooklyBookStoreApp.Presentation.Controllers.TestController",
-    "Method": "GetBeyza",
-    "RelativePath": "api/Test/Beyza",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "BooklyBookStoreApp.Application.Dto",
+        "IsRequired": true
+      }
+    ],
     "ReturnTypes": []
   }
 ]

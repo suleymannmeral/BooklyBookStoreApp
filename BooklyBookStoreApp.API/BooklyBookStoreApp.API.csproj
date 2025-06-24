@@ -16,6 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\BooklyBookStoreApp.Application\BooklyBookStoreApp.Application.csproj" />
     <ProjectReference Include="..\BooklyBookStoreApp.Persistence\BooklyBookStoreApp.Persistence.csproj" />
     <ProjectReference Include="..\BooklyBookStoreApp.Presentation\BooklyBookStoreApp.Presentation.csproj" />
   </ItemGroup>

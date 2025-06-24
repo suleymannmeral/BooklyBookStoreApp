@@ -6,22 +6,29 @@
   },
   "paths": {
     "/api/Test": {
-      "get": {
+      "post": {
         "tags": [
           "Test"
         ],
-        "responses": {
-          "200": {
-            "description": "OK"
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Dto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Dto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Dto"
+              }
+            }
           }
-        }
-      }
-    },
-    "/api/Test/Beyza": {
-      "get": {
-        "tags": [
-          "Test"
-        ],
+        },
         "responses": {
           "200": {
             "description": "OK"
@@ -30,5 +37,38 @@
       }
     }
   },
-  "components": { }
+  "components": {
+    "schemas": {
+      "Dto": {
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": "string",
+            "nullable": true
+          },
+          "description": {
+            "type": "string",
+            "nullable": true
+          },
+          "price": {
+            "type": "number",
+            "format": "double"
+          },
+          "pictureURl": {
+            "type": "string",
+            "nullable": true
+          },
+          "author": {
+            "type": "string",
+            "nullable": true
+          },
+          "categoryID": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  }
 }

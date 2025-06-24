@@ -17,6 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\BooklyBookStoreApp.Application\BooklyBookStoreApp.Application.csproj" />
     <ProjectReference Include="..\BooklyBookStoreApp.Domain\BooklyBookStoreApp.Domain.csproj" />
   </ItemGroup>
 
