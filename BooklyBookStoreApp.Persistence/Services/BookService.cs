@@ -1,7 +1,9 @@
-﻿using BooklyBookStoreApp.Application;
+﻿using AutoMapper;
+using BooklyBookStoreApp.Application.DTOs.BookDtos;
 using BooklyBookStoreApp.Application.Services;
 using BooklyBookStoreApp.Domain.Entitites;
 using BooklyBookStoreApp.Persistence.Context;
+using System.ComponentModel.DataAnnotations;
 
 
 namespace BooklyBookStoreApp.Persistence.Services
@@ -9,23 +11,27 @@ namespace BooklyBookStoreApp.Persistence.Services
     public sealed class BookService : IBookService
     {
         private readonly AppDbContext _appDbContext;
+        private readonly IMapper _mapper;
 
-        public BookService(AppDbContext appDbContext)
+        public BookService(AppDbContext appDbContext, IMapper mapper)
         {
             _appDbContext = appDbContext;
+            _mapper = mapper;
         }
 
-        public async Task CreateAsync(Dto t)
+        public async Task CreateAsync(CreateBookDto createBookDto)
         {
-            Book book = new()
-            {
-                Title = t.Title,
-                Description = t.Description,
-                Price = t.Price,
-                PictureURl = t.PictureURl,
-                Author = t.Author,
-                CategoryID = t.CategoryID
-            };
+            //Book book = new()
+            //{
+            //    Title = createBookDto.Title,
+            //    Description = createBookDto.Description,
+            //    Price = createBookDto.Price,
+            //    PictureURl = createBookDto.PictureURl,
+            //    Author = createBookDto.Author,
+            //    CategoryID = createBookDto.CategoryID
+            //};
+
+            Book book = _mapper.Map<Book>(createBookDto);
 
 
             await _appDbContext.Set<Book>().AddAsync(book); // memorye ekler

@@ -10,6 +10,7 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 
 builder.Services.AddScoped<IBookService, BookService>();
+builder.Services.AddAutoMapper(typeof(BooklyBookStoreApp.Persistence.AssemblyReference).Assembly);
 // Connection string
 string connectionString = builder.Configuration.GetConnectionString("SqlServer");
 

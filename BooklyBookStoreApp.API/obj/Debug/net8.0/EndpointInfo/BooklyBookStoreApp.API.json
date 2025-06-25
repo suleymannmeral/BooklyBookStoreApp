@@ -14,17 +14,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/Dto"
+                "$ref": "#/components/schemas/CreateBookDto"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/Dto"
+                "$ref": "#/components/schemas/CreateBookDto"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/Dto"
+                "$ref": "#/components/schemas/CreateBookDto"
               }
             }
           }
@@ -39,7 +39,7 @@
   },
   "components": {
     "schemas": {
-      "Dto": {
+      "CreateBookDto": {
         "type": "object",
         "properties": {
           "title": {

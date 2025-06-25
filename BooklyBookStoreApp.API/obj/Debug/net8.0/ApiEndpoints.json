@@ -8,8 +8,8 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "dto",
-        "Type": "BooklyBookStoreApp.Application.Dto",
+        "Name": "createBookDto",
+        "Type": "BooklyBookStoreApp.Application.DTOs.BookDtos.CreateBookDto",
         "IsRequired": true
       }
     ],
