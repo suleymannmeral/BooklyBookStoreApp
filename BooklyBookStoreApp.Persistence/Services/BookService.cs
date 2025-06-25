@@ -3,7 +3,6 @@ using BooklyBookStoreApp.Application.DTOs.BookDtos;
 using BooklyBookStoreApp.Application.Services;
 using BooklyBookStoreApp.Domain.Entitites;
 using BooklyBookStoreApp.Persistence.Context;
-using System.ComponentModel.DataAnnotations;
 
 
 namespace BooklyBookStoreApp.Persistence.Services
