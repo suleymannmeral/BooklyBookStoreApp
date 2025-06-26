@@ -1095,6 +1095,9 @@
         }
       },
       "BooklyBookStoreApp.Application/1.0.0": {
+        "dependencies": {
+          "BooklyBookStoreApp.Domain": "1.0.0"
+        },
         "runtime": {
           "BooklyBookStoreApp.Application.dll": {
             "assemblyVersion": "1.0.0.0",

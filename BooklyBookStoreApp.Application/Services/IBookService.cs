@@ -4,7 +4,7 @@ namespace BooklyBookStoreApp.Application.Services
 {
     public interface IBookService
     {
-        Task<IEnumerable<Book>> GetAllBooksAsync(bool trackChanges);
+        Task<IEnumerable<GetBookDto>> GetAllBooksAsync(bool trackChanges);
         Task<BookDto> GetOneBookByIdAsync(int id,bool trackChanges);
         Task<BookDto> CreateBookAsync(CreateBookDto createBookDto);
         Task DeleteBookAsync(int id, bool trackChanges);

@@ -1,18 +1,12 @@
 [
   {
-    "ContainingType": "BooklyBookStoreApp.Presentation.Controllers.TestController",
-    "Method": "Create",
-    "RelativePath": "api/Test",
-    "HttpMethod": "POST",
+    "ContainingType": "BooklyBookStoreApp.Presentation.Controllers.BookController",
+    "Method": "GetAllBooks",
+    "RelativePath": "api/Book/GetAllBooks",
+    "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
-    "Parameters": [
-      {
-        "Name": "createBookDto",
-        "Type": "BooklyBookStoreApp.Application.DTOs.BookDtos.CreateBookDto",
-        "IsRequired": true
-      }
-    ],
+    "Parameters": [],
     "ReturnTypes": []
   }
 ]

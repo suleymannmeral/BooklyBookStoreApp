@@ -3,6 +3,8 @@ using BooklyBookStoreApp.Application.DTOs.BookDtos;
 using BooklyBookStoreApp.Application.Services;
 using BooklyBookStoreApp.Domain.Entitites;
 using BooklyBookStoreApp.Domain.Repositories;
+using BooklyBookStoreApp.Persistence.Repositorires;
+using Microsoft.EntityFrameworkCore;
 
 namespace BooklyBookStoreApp.Persistence.Services
 {
@@ -29,9 +31,14 @@ namespace BooklyBookStoreApp.Persistence.Services
             throw new NotImplementedException();
         }
 
-        public Task<IEnumerable<Book>> GetAllBooksAsync(bool trackChanges)
+        public async Task<IEnumerable<GetBookDto>> GetAllBooksAsync(bool trackChanges)
         {
-            throw new NotImplementedException();
+                var books = await _repositoryManager.Book
+            .GetAllBooks(trackChanges)
+            .Include(b => b.Category)
+            .ToListAsync();
+
+            return _mapper.Map<IEnumerable<GetBookDto>>(books);
         }
 
         public Task<BookDto> GetOneBookByIdAsync(int id, bool trackChanges)

@@ -1,6 +1,4 @@
-﻿
-
-namespace BooklyBookStoreApp.Application.DTOs.BookDtos;
+﻿namespace BooklyBookStoreApp.Application.DTOs.BookDtos;
 
 public record BookDto(
  string Title,
