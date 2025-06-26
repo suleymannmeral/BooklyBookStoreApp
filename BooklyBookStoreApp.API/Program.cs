@@ -1,6 +1,8 @@
 using BooklyBookStoreApp.Application.Services;
 using BooklyBookStoreApp.Domain.Entitites;
+using BooklyBookStoreApp.Domain.Repositories;
 using BooklyBookStoreApp.Persistence.Context;
+using BooklyBookStoreApp.Persistence.Repositorires;
 using BooklyBookStoreApp.Persistence.Services;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
@@ -10,7 +12,9 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 
 builder.Services.AddScoped<IBookService, BookService>();
+builder.Services.AddScoped<IRepositoryManager,RepositoryManager>();
 builder.Services.AddAutoMapper(typeof(BooklyBookStoreApp.Persistence.AssemblyReference).Assembly);
+
 // Connection string
 string connectionString = builder.Configuration.GetConnectionString("SqlServer");
 

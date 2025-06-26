@@ -2,42 +2,46 @@
 using BooklyBookStoreApp.Application.DTOs.BookDtos;
 using BooklyBookStoreApp.Application.Services;
 using BooklyBookStoreApp.Domain.Entitites;
-using BooklyBookStoreApp.Persistence.Context;
-
+using BooklyBookStoreApp.Domain.Repositories;
 
 namespace BooklyBookStoreApp.Persistence.Services
 {
     public sealed class BookService : IBookService
     {
-        private readonly AppDbContext _appDbContext;
+       private readonly IRepositoryManager _repositoryManager;
+
         private readonly IMapper _mapper;
 
-        public BookService(AppDbContext appDbContext, IMapper mapper)
+        public BookService(IMapper mapper, IRepositoryManager repositoryManager)
         {
-            _appDbContext = appDbContext;
+
             _mapper = mapper;
+            _repositoryManager = repositoryManager;
         }
 
-        public async Task CreateAsync(CreateBookDto createBookDto)
+        public Task<BookDto> CreateBookAsync(CreateBookDto createBookDto)
         {
-            //Book book = new()
-            //{
-            //    Title = createBookDto.Title,
-            //    Description = createBookDto.Description,
-            //    Price = createBookDto.Price,
-            //    PictureURl = createBookDto.PictureURl,
-            //    Author = createBookDto.Author,
-            //    CategoryID = createBookDto.CategoryID
-            //};
+            throw new NotImplementedException();
+        }
 
-            Book book = _mapper.Map<Book>(createBookDto);
+        public Task DeleteBookAsync(int id, bool trackChanges)
+        {
+            throw new NotImplementedException();
+        }
 
+        public Task<IEnumerable<Book>> GetAllBooksAsync(bool trackChanges)
+        {
+            throw new NotImplementedException();
+        }
 
-            await _appDbContext.Set<Book>().AddAsync(book); // memorye ekler
-            await _appDbContext.SaveChangesAsync();           // veritabanına ekler
+        public Task<BookDto> GetOneBookByIdAsync(int id, bool trackChanges)
+        {
+            throw new NotImplementedException();
+        }
 
-
-
+        public Task UpdateBookAsync(int id, UpdateBookDto updateBookDto, bool trackChanges)
+        {
+            throw new NotImplementedException();
         }
     }
 }

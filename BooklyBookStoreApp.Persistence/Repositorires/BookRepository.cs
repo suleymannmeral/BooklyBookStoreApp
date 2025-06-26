@@ -15,7 +15,8 @@ public sealed class BookRepository : RepositoryBase<Book>, IBookRepository
     public void DeleteBook(Book book)=>Delete(book);
     public IQueryable<Book> GetAllBooks(bool trackChanges) =>
         FindAll(trackChanges);
-    public IQueryable<Book> GetOneBookById(int id, bool trackChanges) =>
-        FindByCondition(b => b.Id.Equals(id), trackChanges);
+    public Book GetOneBookById(int id, bool trackChanges) =>
+        FindByCondition(b => b.Id.Equals(id), trackChanges)
+        .SingleOrDefault();
     public void UpdateBook(Book book)=>Update(book);
 }
