@@ -17,6 +17,27 @@
   },
   {
     "ContainingType": "BooklyBookStoreApp.Presentation.Controllers.BookController",
+    "Method": "UpdateBook",
+    "RelativePath": "api/Book/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "bookDto",
+        "Type": "BooklyBookStoreApp.Application.DTOs.BookDtos.UpdateBookDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BooklyBookStoreApp.Presentation.Controllers.BookController",
     "Method": "GetAllBooks",
     "RelativePath": "api/Book/GetAllBooks",
     "HttpMethod": "GET",

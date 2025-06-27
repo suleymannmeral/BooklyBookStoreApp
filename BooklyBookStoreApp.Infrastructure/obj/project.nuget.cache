@@ -21,5 +21,15 @@
     "C:\\Users\\suley\\.nuget\\packages\\microsoft.extensions.primitives\\9.0.6\\microsoft.extensions.primitives.9.0.6.nupkg.sha512",
     "C:\\Users\\suley\\.nuget\\packages\\system.diagnostics.diagnosticsource\\9.0.6\\system.diagnostics.diagnosticsource.9.0.6.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "NU1900",
+      "level": "Warning",
+      "message": "Error occurred while getting package vulnerability data: An error occurred while sending the request.",
+      "projectPath": "C:\\Users\\suley\\source\\repos\\BooklyBookStoreApp\\BooklyBookStoreApp.Infrastructure\\BooklyBookStoreApp.Infrastructure.csproj",
+      "warningLevel": 1,
+      "filePath": "C:\\Users\\suley\\source\\repos\\BooklyBookStoreApp\\BooklyBookStoreApp.Infrastructure\\BooklyBookStoreApp.Infrastructure.csproj",
+      "targetGraphs": []
+    }
+  ]
 }

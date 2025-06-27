@@ -61,9 +61,13 @@ public sealed class BookService : IBookService
         throw new NotImplementedException();
     }
 
-    public Task UpdateBookAsync(int id, UpdateBookDto updateBookDto, bool trackChanges)
+    public async Task UpdateBookAsync(int id, UpdateBookDto updateBookDto, bool trackChanges)
     {
-        throw new NotImplementedException();
+        var book = await CheckBookExist(id, false); 
+        _mapper.Map(updateBookDto, book); // yeni nesne oluşturma, var olan nesneye map et
+        _repositoryManager.Book.Update(book);
+        await _repositoryManager.Save();
+
     }
-   
+
 }

@@ -1,4 +1,5 @@
-﻿using BooklyBookStoreApp.Application.Services;
+﻿using BooklyBookStoreApp.Application.DTOs.BookDtos;
+using BooklyBookStoreApp.Application.Services;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BooklyBookStoreApp.Presentation.Controllers;
@@ -27,5 +28,13 @@ public class BookController:ControllerBase
     {
         await _bookService.DeleteBookAsync(id,false);
         return Ok("Book has been deleted succesfully");
+    }
+
+    [HttpPut("{id:int}")]
+
+    public async Task<IActionResult> UpdateBook([FromRoute(Name = "id")] int id, [FromBody] UpdateBookDto bookDto)
+    {
+        await _bookService.UpdateBookAsync(id,bookDto,false);
+        return Ok("Book has been updated successfully");
     }
 }
