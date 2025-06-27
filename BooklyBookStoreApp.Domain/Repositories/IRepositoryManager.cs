@@ -3,7 +3,7 @@
 public interface IRepositoryManager                          // Repoları Buradan Yöneteceğiz
 {
     IBookRepository Book { get; }
-    void Save();
+    Task Save();
 
 
 }

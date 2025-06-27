@@ -21,4 +21,11 @@ public class BookController:ControllerBase
         var result = await _bookService.GetAllBooksAsync(false);
         return Ok(result);
     }
+
+    [HttpDelete("{id:int}")]
+    public async Task<IActionResult> DeleteBook([FromRoute(Name="id")] int id)
+    {
+        await _bookService.DeleteBookAsync(id,false);
+        return Ok("Book has been deleted succesfully");
+    }
 }
