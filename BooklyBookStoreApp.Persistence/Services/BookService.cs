@@ -56,9 +56,10 @@ public sealed class BookService : IBookService
         return _mapper.Map<IEnumerable<GetBookDto>>(books);
     }
 
-    public Task<BookDto> GetOneBookByIdAsync(int id, bool trackChanges)
+    public async Task<GetBookDto> GetOneBookByIdAsync(int id, bool trackChanges)
     {
-        throw new NotImplementedException();
+        var book = await CheckBookExist(id, false);
+        return _mapper.Map<GetBookDto>(book);
     }
 
     public async Task UpdateBookAsync(int id, UpdateBookDto updateBookDto, bool trackChanges)
