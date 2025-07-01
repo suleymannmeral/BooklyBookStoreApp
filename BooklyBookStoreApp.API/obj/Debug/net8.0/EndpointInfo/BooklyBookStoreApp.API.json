@@ -17,7 +17,7 @@
         }
       }
     },
-    "/api/Book/GetBookByID": {
+    "/api/Book/{id}": {
       "get": {
         "tags": [
           "Book"
@@ -25,7 +25,8 @@
         "parameters": [
           {
             "name": "id",
-            "in": "query",
+            "in": "path",
+            "required": true,
             "schema": {
               "type": "integer",
               "format": "int32"
@@ -37,9 +38,7 @@
             "description": "OK"
           }
         }
-      }
-    },
-    "/api/Book/{id}": {
+      },
       "delete": {
         "tags": [
           "Book"

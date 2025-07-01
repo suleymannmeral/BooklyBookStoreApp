@@ -22,10 +22,10 @@ public class BookController:ControllerBase
         var result = await _bookService.GetAllBooksAsync(false);
         return Ok(result);
     }
-    [HttpGet("GetBookByID")]
+    [HttpGet("{id:int}")]
     public async Task<IActionResult> GetBookByID(int id)
     {
-        var result = await _bookService.GetOneBookByIdAsync(id,false);
+        var result = await _bookService.GetOneBookByIdWithCategoryAsync(id,false);
         return Ok(result);
     }
 

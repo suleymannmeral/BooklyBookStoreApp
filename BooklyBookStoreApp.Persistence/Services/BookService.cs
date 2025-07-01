@@ -49,9 +49,9 @@ public sealed class BookService : IBookService
     public async Task<IEnumerable<GetBookDto>> GetAllBooksAsync(bool trackChanges)
     {
             var books = await _repositoryManager.Book
-        .GetAllBooks(trackChanges)
-        .Include(b => b.Category)
-        .ToListAsync();
+            .GetAllBooks(trackChanges)
+            .Include(b => b.Category)
+            .ToListAsync();
 
         return _mapper.Map<IEnumerable<GetBookDto>>(books);
     }
@@ -71,4 +71,11 @@ public sealed class BookService : IBookService
 
     }
 
+    public async Task<GetBookDto> GetOneBookByIdWithCategoryAsync(int id, bool trackChanges)
+    {
+        var book = await _repositoryManager.Book.GetOneBookByIdWithCategoryAsync(id, trackChanges);
+        if (book is null)
+            throw new ArgumentException($"Book with ID {id} not found.");
+        return _mapper.Map<GetBookDto>(book);
+    }
 }

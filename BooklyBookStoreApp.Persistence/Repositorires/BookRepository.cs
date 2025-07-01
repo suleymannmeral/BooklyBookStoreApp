@@ -19,8 +19,15 @@ public sealed class BookRepository : RepositoryBase<Book>, IBookRepository
     public async Task<Book> GetOneBookByIdAsync(int id, bool trackChanges)
     {
         return await FindByCondition(b => b.Id == id, trackChanges)
+            .FirstOrDefaultAsync();
+    }
+
+    public async Task<Book> GetOneBookByIdWithCategoryAsync(int id, bool trackChanges)
+    {
+        return await FindByCondition(b => b.Id == id, trackChanges)
             .Include(b => b.Category)
             .FirstOrDefaultAsync();
     }
+
     public void UpdateBook(Book book)=>Update(book);
 }
