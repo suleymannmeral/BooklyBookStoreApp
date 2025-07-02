@@ -1,8 +1,8 @@
 [
   {
-    "ContainingType": "BooklyBookStoreApp.Presentation.Controllers.BookController",
+    "ContainingType": "BooklyBookStoreApp.Presentation.Controllers.BooksController",
     "Method": "CreateBook",
-    "RelativePath": "api/Book",
+    "RelativePath": "api/Books",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -16,9 +16,9 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "BooklyBookStoreApp.Presentation.Controllers.BookController",
-    "Method": "GetBookByID",
-    "RelativePath": "api/Book/{id}",
+    "ContainingType": "BooklyBookStoreApp.Presentation.Controllers.BooksController",
+    "Method": "GetOneBookWithCategoryName",
+    "RelativePath": "api/Books/{id}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -32,9 +32,9 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "BooklyBookStoreApp.Presentation.Controllers.BookController",
+    "ContainingType": "BooklyBookStoreApp.Presentation.Controllers.BooksController",
     "Method": "DeleteBook",
-    "RelativePath": "api/Book/{id}",
+    "RelativePath": "api/Books/{id}",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
@@ -48,9 +48,9 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "BooklyBookStoreApp.Presentation.Controllers.BookController",
+    "ContainingType": "BooklyBookStoreApp.Presentation.Controllers.BooksController",
     "Method": "UpdateBook",
-    "RelativePath": "api/Book/{id}",
+    "RelativePath": "api/Books/{id}",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
@@ -69,9 +69,9 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "BooklyBookStoreApp.Presentation.Controllers.BookController",
+    "ContainingType": "BooklyBookStoreApp.Presentation.Controllers.BooksController",
     "Method": "GetAllBooksWithCategoryName",
-    "RelativePath": "api/Book/GetAllBooksWithCategoryName",
+    "RelativePath": "api/Books/GetAllBooksWithCategoryName",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,

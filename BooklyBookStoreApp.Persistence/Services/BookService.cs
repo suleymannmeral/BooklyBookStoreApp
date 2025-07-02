@@ -22,7 +22,7 @@ public sealed class BookService : IBookService
 
     private async Task<Book> CheckBookExist(int id, bool trackChanges)
     {
-        var book = await _repositoryManager.Book.GetOneBookByIdAsync(id, trackChanges);
+        var book = await _repositoryManager.Book.GetOneBookById(id, trackChanges).FirstOrDefaultAsync();
         if (book is null)
         {
             throw new ArgumentException("Book not found");   
@@ -70,7 +70,7 @@ public sealed class BookService : IBookService
 
     public async Task<GetOneBookWithCategoryNameDto> GetOneBookByIdWithCategoryNameAsync(int id, bool trackChanges)
     {
-        var book = await _repositoryManager.Book.GetOneBookByIdWithCategoryAsync(id, trackChanges);
+        var book = await _repositoryManager.Book.GetOneBookById(id, trackChanges).Include(b => b.Category).FirstOrDefaultAsync();
         if (book is null)
             throw new ArgumentException($"Book with ID {id} not found.");
         return _mapper.Map<GetOneBookWithCategoryNameDto>(book);

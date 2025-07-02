@@ -16,18 +16,8 @@ public sealed class BookRepository : RepositoryBase<Book>, IBookRepository
     public void DeleteBook(Book book)=>Delete(book);
     public IQueryable<Book> GetAllBooks(bool trackChanges) =>
         FindAll(trackChanges);
-    public async Task<Book> GetOneBookByIdAsync(int id, bool trackChanges)
-    {
-        return await FindByCondition(b => b.Id == id, trackChanges)
-            .FirstOrDefaultAsync();
-    }
-
-    public async Task<Book> GetOneBookByIdWithCategoryAsync(int id, bool trackChanges)
-    {
-        return await FindByCondition(b => b.Id == id, trackChanges)
-            .Include(b => b.Category)
-            .FirstOrDefaultAsync();
-    }
+    public IQueryable<Book> GetOneBookById(int id, bool trackChanges)=>
+        FindByCondition(b => b.Id == id, trackChanges);
 
     public void UpdateBook(Book book)=>Update(book);
 }

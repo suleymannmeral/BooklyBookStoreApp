@@ -14,6 +14,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddScoped<IBookService, BookService>();
 builder.Services.AddScoped<IRepositoryManager,RepositoryManager>();
 builder.Services.AddAutoMapper(typeof(BooklyBookStoreApp.Persistence.AssemblyReference).Assembly);
+builder.Services.AddScoped<IServiceManager, ServiceManager>();
 
 // Connection string
 string connectionString = builder.Configuration.GetConnectionString("SqlServer");

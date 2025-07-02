@@ -5,10 +5,10 @@
     "version": "1.0"
   },
   "paths": {
-    "/api/Book/GetAllBooksWithCategoryName": {
+    "/api/Books/GetAllBooksWithCategoryName": {
       "get": {
         "tags": [
-          "Book"
+          "Books"
         ],
         "responses": {
           "200": {
@@ -17,10 +17,10 @@
         }
       }
     },
-    "/api/Book": {
+    "/api/Books": {
       "post": {
         "tags": [
-          "Book"
+          "Books"
         ],
         "requestBody": {
           "content": {
@@ -48,10 +48,10 @@
         }
       }
     },
-    "/api/Book/{id}": {
+    "/api/Books/{id}": {
       "get": {
         "tags": [
-          "Book"
+          "Books"
         ],
         "parameters": [
           {
@@ -72,7 +72,7 @@
       },
       "delete": {
         "tags": [
-          "Book"
+          "Books"
         ],
         "parameters": [
           {
@@ -93,7 +93,7 @@
       },
       "put": {
         "tags": [
-          "Book"
+          "Books"
         ],
         "parameters": [
           {

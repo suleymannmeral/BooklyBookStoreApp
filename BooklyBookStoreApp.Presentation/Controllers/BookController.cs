@@ -1,31 +1,27 @@
 ﻿using BooklyBookStoreApp.Application.DTOs.BookDtos;
 using BooklyBookStoreApp.Application.Services;
+using BooklyBookStoreApp.Presentation.Abstractions;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BooklyBookStoreApp.Presentation.Controllers;
 
 
-[ApiController]
-[Route("api/[controller]")]
-public class BookController:ControllerBase
+public class BooksController:BaseApiController
 {
-    private readonly IBookService _bookService;
-
-    public BookController(IBookService bookService)
+    public BooksController(IServiceManager manager) : base(manager)
     {
-        _bookService = bookService;
     }
 
     [HttpGet("GetAllBooksWithCategoryName")]
     public async Task<IActionResult> GetAllBooksWithCategoryName()
     {
-        var result = await _bookService.GetAllBooksWithCategoryNameAsync(false);
+        var result = await _manager.BookService.GetAllBooksWithCategoryNameAsync(false);
         return Ok(result);
     }
     [HttpPost]
     public async Task<IActionResult> CreateBook([FromBody] CreateBookDto bookDto)
     {
-        var result = await _bookService.CreateBookAsync(bookDto);
+        var result = await _manager.BookService.CreateBookAsync(bookDto);
         return Ok(new
         {
             message = "Book has been added successfully",
@@ -36,14 +32,14 @@ public class BookController:ControllerBase
     [HttpGet("{id:int}")]
     public async Task<IActionResult> GetOneBookWithCategoryName(int id)
     {
-        var result = await _bookService.GetOneBookByIdWithCategoryNameAsync(id,false);
+        var result = await _manager.BookService.GetOneBookByIdWithCategoryNameAsync(id,false);
         return Ok(result);
     }
 
     [HttpDelete("{id:int}")]
     public async Task<IActionResult> DeleteBook([FromRoute(Name="id")] int id)
     {
-        await _bookService.DeleteBookAsync(id,false);
+        await _manager.BookService.DeleteBookAsync(id,false);
         return Ok("Book has been deleted succesfully");
     }
 
@@ -51,7 +47,7 @@ public class BookController:ControllerBase
 
     public async Task<IActionResult> UpdateBook([FromRoute(Name = "id")] int id, [FromBody] UpdateBookDto bookDto)
     {
-        await _bookService.UpdateBookAsync(id,bookDto,false);
+        await _manager.BookService.UpdateBookAsync(id,bookDto,false);
         return Ok("Book has been updated successfully");
     }
 }
