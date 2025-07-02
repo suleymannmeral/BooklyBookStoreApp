@@ -16,16 +16,27 @@ public class BookController:ControllerBase
         _bookService = bookService;
     }
 
-    [HttpGet("GetAllBooks")]
-    public async Task<IActionResult> GetAllBooks()
+    [HttpGet("GetAllBooksWithCategoryName")]
+    public async Task<IActionResult> GetAllBooksWithCategoryName()
     {
-        var result = await _bookService.GetAllBooksAsync(false);
+        var result = await _bookService.GetAllBooksWithCategoryNameAsync(false);
         return Ok(result);
     }
-    [HttpGet("{id:int}")]
-    public async Task<IActionResult> GetBookByID(int id)
+    [HttpPost]
+    public async Task<IActionResult> CreateBook([FromBody] CreateBookDto bookDto)
     {
-        var result = await _bookService.GetOneBookByIdWithCategoryAsync(id,false);
+        var result = await _bookService.CreateBookAsync(bookDto);
+        return Ok(new
+        {
+            message = "Book has been added successfully",
+            data = result
+        });
+    }
+
+    [HttpGet("{id:int}")]
+    public async Task<IActionResult> GetOneBookWithCategoryName(int id)
+    {
+        var result = await _bookService.GetOneBookByIdWithCategoryNameAsync(id,false);
         return Ok(result);
     }
 

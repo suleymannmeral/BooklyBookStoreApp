@@ -89,15 +89,5 @@
     "C:\\Users\\suley\\.nuget\\packages\\system.threading.tasks.extensions\\4.5.4\\system.threading.tasks.extensions.4.5.4.nupkg.sha512",
     "C:\\Users\\suley\\.nuget\\packages\\system.windows.extensions\\6.0.0\\system.windows.extensions.6.0.0.nupkg.sha512"
   ],
-  "logs": [
-    {
-      "code": "NU1900",
-      "level": "Warning",
-      "message": "Error occurred while getting package vulnerability data: An error occurred while sending the request.",
-      "projectPath": "C:\\Users\\suley\\source\\repos\\BooklyBookStoreApp\\BooklyBookStoreApp.Persistence\\BooklyBookStoreApp.Persistence.csproj",
-      "warningLevel": 1,
-      "filePath": "C:\\Users\\suley\\source\\repos\\BooklyBookStoreApp\\BooklyBookStoreApp.Persistence\\BooklyBookStoreApp.Persistence.csproj",
-      "targetGraphs": []
-    }
-  ]
+  "logs": []
 }

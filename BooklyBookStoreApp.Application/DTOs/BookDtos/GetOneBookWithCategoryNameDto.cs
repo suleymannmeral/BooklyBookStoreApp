@@ -1,8 +1,9 @@
 ﻿
+
 namespace BooklyBookStoreApp.Application.DTOs.BookDtos;
 
-public record GetBookDto(
- int Id,
+public record GetOneBookWithCategoryNameDto
+    (int Id,
 string Title,
 string? Description,
 decimal Price,

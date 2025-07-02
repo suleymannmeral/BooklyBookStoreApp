@@ -46,36 +46,33 @@ public sealed class BookService : IBookService
         await _repositoryManager.Save();
     }
 
-    public async Task<IEnumerable<GetBookDto>> GetAllBooksAsync(bool trackChanges)
+    public async Task<IEnumerable<GetAllBooksWithCategoryNameDto>> GetAllBooksWithCategoryNameAsync(bool trackChanges)
     {
             var books = await _repositoryManager.Book
             .GetAllBooks(trackChanges)
             .Include(b => b.Category)
             .ToListAsync();
 
-        return _mapper.Map<IEnumerable<GetBookDto>>(books);
+        return _mapper.Map<IEnumerable<GetAllBooksWithCategoryNameDto>>(books);
     }
 
-    public async Task<GetBookDto> GetOneBookByIdAsync(int id, bool trackChanges)
-    {
-        var book = await CheckBookExist(id, false);
-        return _mapper.Map<GetBookDto>(book);
-    }
+
 
     public async Task UpdateBookAsync(int id, UpdateBookDto updateBookDto, bool trackChanges)
     {
         var book = await CheckBookExist(id, false); 
+         
         _mapper.Map(updateBookDto, book); // yeni nesne oluşturma, var olan nesneye map et
         _repositoryManager.Book.Update(book);
         await _repositoryManager.Save();
 
     }
 
-    public async Task<GetBookDto> GetOneBookByIdWithCategoryAsync(int id, bool trackChanges)
+    public async Task<GetOneBookWithCategoryNameDto> GetOneBookByIdWithCategoryNameAsync(int id, bool trackChanges)
     {
         var book = await _repositoryManager.Book.GetOneBookByIdWithCategoryAsync(id, trackChanges);
         if (book is null)
             throw new ArgumentException($"Book with ID {id} not found.");
-        return _mapper.Map<GetBookDto>(book);
+        return _mapper.Map<GetOneBookWithCategoryNameDto>(book);
     }
 }
