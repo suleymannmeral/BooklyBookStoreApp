@@ -1,9 +1,10 @@
-using BooklyBookStoreApp.Application.Services;
+﻿using BooklyBookStoreApp.Application.Services;
 using BooklyBookStoreApp.Domain.Entitites;
 using BooklyBookStoreApp.Domain.Repositories;
 using BooklyBookStoreApp.Persistence.Context;
 using BooklyBookStoreApp.Persistence.Repositorires;
 using BooklyBookStoreApp.Persistence.Services;
+using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
@@ -27,11 +28,20 @@ builder.Services.AddIdentity<AppUser, IdentityRole>()
     .AddEntityFrameworkStores<AppDbContext>()
     .AddDefaultTokenProviders();
 
-builder.Services.AddControllers()
-    .AddApplicationPart(typeof(
-    BooklyBookStoreApp.Presentation.AssemblyReference).Assembly);
 
-   
+
+// ... diğer servis eklemeleri
+
+
+builder.Services.AddControllers()
+
+.AddApplicationPart(typeof(BooklyBookStoreApp.Presentation.AssemblyReference).Assembly)
+.AddFluentValidation(config =>
+{
+    config.RegisterValidatorsFromAssembly(typeof(BooklyBookStoreApp.Application.AssemblyReference).Assembly);
+});
+
+
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();

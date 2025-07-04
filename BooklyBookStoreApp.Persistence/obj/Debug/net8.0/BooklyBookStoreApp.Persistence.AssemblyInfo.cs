@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("BooklyBookStoreApp.Persistence")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+976d7bac38f68301bf799e4d5330e7d9dc69884a")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+fcef7d4d703f29246c6f5b6fe58e3b7748fa28f2")]
 [assembly: System.Reflection.AssemblyProductAttribute("BooklyBookStoreApp.Persistence")]
 [assembly: System.Reflection.AssemblyTitleAttribute("BooklyBookStoreApp.Persistence")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

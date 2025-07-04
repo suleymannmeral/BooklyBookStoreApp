@@ -21,6 +21,8 @@ public class BooksController:BaseApiController
     [HttpPost]
     public async Task<IActionResult> CreateBook([FromBody] CreateBookDto bookDto)
     {
+        if (!ModelState.IsValid)
+            return BadRequest(ModelState);
         var result = await _manager.BookService.CreateBookAsync(bookDto);
         return Ok(new
         {
@@ -47,6 +49,9 @@ public class BooksController:BaseApiController
 
     public async Task<IActionResult> UpdateBook([FromRoute(Name = "id")] int id, [FromBody] UpdateBookDto bookDto)
     {
+
+        if (!ModelState.IsValid)
+            return BadRequest(ModelState);
         await _manager.BookService.UpdateBookAsync(id,bookDto,false);
         return Ok("Book has been updated successfully");
     }

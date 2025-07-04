@@ -4,7 +4,7 @@
     {
         public static void ConfigureSqlContex(this IServiceCollection services)      // extension method uses this keyword
         {
-
+            
         }
 
 

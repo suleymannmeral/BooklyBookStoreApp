@@ -1,0 +1,15 @@
+﻿using BooklyBookStoreApp.Application.DTOs.BookDtos;
+using FluentValidation;
+
+
+namespace BooklyBookStoreApp.Application.Validator;
+
+public class CreateBookDtoValidator : AbstractValidator<CreateBookDto>
+{
+    public CreateBookDtoValidator()
+    {
+        RuleFor(x => x.Title).NotEmpty().WithMessage("Title is required.");
+        RuleFor(x => x.Title).NotNull().WithMessage("Title is required.");
+        RuleFor(x => x.Price).GreaterThan(0).WithMessage("Price must be greater than zero.");
+    }
+}
