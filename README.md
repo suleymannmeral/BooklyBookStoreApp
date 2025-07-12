@@ -1,6 +1,6 @@
 # 📚 Online Kitap Satış Web Uygulaması
 
-Bu proje, **Clean Architecture** prensiplerine bağlı kalınarak geliştirilen bir **online kitap satış web uygulamasıdır**. Backend tarafı, **ASP.NET Core Web API** teknolojisi ile yapılandırılmıştır. Kullanıcılar sisteme kayıt olabilir, giriş yapabilir, kitapları görüntüleyebilir, favorilerine ekleyebilir ve sepetlerine kitap ekleyerek alışveriş yapabilirler.
+Bu proje Acunmedya Akademi ve Akademiq işbirliği ile düzenlenen Senior Developer İbrahim Gökyar tarafından verilen .NET Core developer bootcamp'inin , **Clean Architecture** prensiplerine bağlı kalınarak geliştirilen bir **online kitap satış web uygulamasıdır**. Backend tarafı, **ASP.NET Core Web API** teknolojisi ile yapılandırılmıştır. Kullanıcılar sisteme kayıt olabilir, giriş yapabilir, kitapları görüntüleyebilir, favorilerine ekleyebilir ve sepetlerine kitap ekleyerek alışveriş yapabilirler.
 
 Ayrıca bir **admin paneli** üzerinden, admin yetkisine sahip kullanıcılar kitap ekleyebilir, silebilir ve kullanıcı yönetimi işlemlerini gerçekleştirebilirler.
 
