@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using BooklyBookStoreApp.Application.DTOs.BookDtos;
+using BooklyBookStoreApp.Application.Exceptions;
 using BooklyBookStoreApp.Application.Services;
 using BooklyBookStoreApp.Domain.Entitites;
 using BooklyBookStoreApp.Domain.Repositories;
@@ -25,7 +26,7 @@ public sealed class BookService : IBookService
         var book = await _repositoryManager.Book.GetOneBookById(id, trackChanges).FirstOrDefaultAsync();
         if (book is null)
         {
-            throw new ArgumentException("Book not found");   
+            throw new BookNotFoundException(id);   
         }
         return book;
 
@@ -73,7 +74,7 @@ public sealed class BookService : IBookService
     {
         var book = await _repositoryManager.Book.GetOneBookById(id, trackChanges).Include(b => b.Category).FirstOrDefaultAsync();
         if (book is null)
-            throw new ArgumentException($"Book with ID {id} not found.");
+            throw new BookNotFoundException(id);
         return _mapper.Map<GetOneBookWithCategoryNameDto>(book);
     }
 }

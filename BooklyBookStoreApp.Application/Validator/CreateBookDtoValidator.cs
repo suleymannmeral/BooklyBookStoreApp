@@ -10,6 +10,6 @@ public class CreateBookDtoValidator : AbstractValidator<CreateBookDto>
     {
         RuleFor(x => x.Title).NotEmpty().WithMessage("Title is required.");
         RuleFor(x => x.Title).NotNull().WithMessage("Title is required.");
-        RuleFor(x => x.Price).GreaterThan(0).WithMessage("Price must be greater than zero.");
+        RuleFor(x => x.Price).GreaterThan(10).WithMessage("Price must be greater than 10.");
     }
 }

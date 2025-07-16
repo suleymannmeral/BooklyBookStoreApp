@@ -1,6 +1,16 @@
 [
   {
     "ContainingType": "BooklyBookStoreApp.Presentation.Controllers.BooksController",
+    "Method": "GetAllBooksWithCategoryName",
+    "RelativePath": "api/Books",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BooklyBookStoreApp.Presentation.Controllers.BooksController",
     "Method": "CreateBook",
     "RelativePath": "api/Books",
     "HttpMethod": "POST",
@@ -66,16 +76,6 @@
         "IsRequired": true
       }
     ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "BooklyBookStoreApp.Presentation.Controllers.BooksController",
-    "Method": "GetAllBooksWithCategoryName",
-    "RelativePath": "api/Books/GetAllBooksWithCategoryName",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
     "ReturnTypes": []
   }
 ]

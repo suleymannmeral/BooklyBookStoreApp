@@ -2,6 +2,7 @@
 namespace BooklyBookStoreApp.Application.DTOs.BookDtos;
 
 public record CreateBookDto(
+
     string Title,
     string? Description,
     decimal Price,

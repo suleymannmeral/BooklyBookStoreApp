@@ -1,4 +1,5 @@
-﻿using BooklyBookStoreApp.Application.Services;
+﻿using BooklyBookStoreApp.API.Middlewares;
+using BooklyBookStoreApp.Application.Services;
 using BooklyBookStoreApp.Domain.Entitites;
 using BooklyBookStoreApp.Domain.Repositories;
 using BooklyBookStoreApp.Persistence.Context;
@@ -6,6 +7,7 @@ using BooklyBookStoreApp.Persistence.Repositorires;
 using BooklyBookStoreApp.Persistence.Services;
 using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -30,16 +32,34 @@ builder.Services.AddIdentity<AppUser, IdentityRole>()
 
 
 
-// ... diğer servis eklemeleri
-
-
 builder.Services.AddControllers()
+    .AddApplicationPart(typeof(BooklyBookStoreApp.Presentation.AssemblyReference).Assembly)
+    .AddFluentValidation(config =>
+    {
+        config.RegisterValidatorsFromAssembly(typeof(BooklyBookStoreApp.Application.AssemblyReference).Assembly);
+    })
+    .ConfigureApiBehaviorOptions(options =>
+    {
+        // Model validation hatalarını özel biçimde ele al
+        options.InvalidModelStateResponseFactory = context =>
+        {
+            var errors = context.ModelState
+                .Where(x => x.Value.Errors.Count > 0)
+                .ToDictionary(
+                    kvp => kvp.Key,
+                    kvp => kvp.Value.Errors.Select(e => e.ErrorMessage).ToArray()
+                );
 
-.AddApplicationPart(typeof(BooklyBookStoreApp.Presentation.AssemblyReference).Assembly)
-.AddFluentValidation(config =>
-{
-    config.RegisterValidatorsFromAssembly(typeof(BooklyBookStoreApp.Application.AssemblyReference).Assembly);
-});
+            var result = new
+            {
+                success = false,
+                message = "Validation failed",
+                errors = errors
+            };
+
+            return new BadRequestObjectResult(result);
+        };
+    });
 
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
@@ -64,6 +84,8 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+app.ConfigureExceptionHandler();
+
 
 app.UseHttpsRedirection();
 

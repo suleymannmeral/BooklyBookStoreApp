@@ -5,7 +5,7 @@
     "version": "1.0"
   },
   "paths": {
-    "/api/Books/GetAllBooksWithCategoryName": {
+    "/api/Books": {
       "get": {
         "tags": [
           "Books"
@@ -15,9 +15,7 @@
             "description": "OK"
           }
         }
-      }
-    },
-    "/api/Books": {
+      },
       "post": {
         "tags": [
           "Books"

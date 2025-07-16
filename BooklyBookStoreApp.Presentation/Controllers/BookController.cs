@@ -12,7 +12,7 @@ public class BooksController:BaseApiController
     {
     }
 
-    [HttpGet("GetAllBooksWithCategoryName")]
+    [HttpGet]
     public async Task<IActionResult> GetAllBooksWithCategoryName()
     {
         var result = await _manager.BookService.GetAllBooksWithCategoryNameAsync(false);
@@ -23,8 +23,9 @@ public class BooksController:BaseApiController
     {
         if (!ModelState.IsValid)
             return BadRequest(ModelState);
+
         var result = await _manager.BookService.CreateBookAsync(bookDto);
-        return Ok(new
+        return CreatedAtAction(nameof(GetOneBookWithCategoryName), new { id = result.Id }, new
         {
             message = "Book has been added successfully",
             data = result
