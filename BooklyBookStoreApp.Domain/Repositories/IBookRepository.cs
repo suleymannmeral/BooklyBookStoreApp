@@ -7,8 +7,8 @@ public  interface IBookRepository:IRepositoryBase<Book>
 {
     IQueryable<Book> GetAllBooks(bool trackChanges);
     IQueryable<Book> GetOneBookById(int id, bool trackChanges);
-    void CreateBook(Book book);
-    void UpdateBook(Book book);
-    void DeleteBook(Book book);
+    Task CreateBook(Book book);
+    Task  UpdateBook(Book book);
+    Task DeleteBook(Book book);
 
 }
