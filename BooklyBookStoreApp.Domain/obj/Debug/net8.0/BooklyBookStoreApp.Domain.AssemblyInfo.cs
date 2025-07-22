@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("BooklyBookStoreApp.Domain")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+976d7bac38f68301bf799e4d5330e7d9dc69884a")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5738c68ff4e470af4132122f85ffa59c58da6303")]
 [assembly: System.Reflection.AssemblyProductAttribute("BooklyBookStoreApp.Domain")]
 [assembly: System.Reflection.AssemblyTitleAttribute("BooklyBookStoreApp.Domain")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

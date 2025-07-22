@@ -5,6 +5,7 @@ using BooklyBookStoreApp.Domain.Repositories;
 using BooklyBookStoreApp.Persistence.Context;
 using BooklyBookStoreApp.Persistence.Repositorires;
 using BooklyBookStoreApp.Persistence.Services;
+using BooklyBookStoreApp.Presentation.ActionFilters;
 using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -30,7 +31,7 @@ builder.Services.AddIdentity<AppUser, IdentityRole>()
     .AddEntityFrameworkStores<AppDbContext>()
     .AddDefaultTokenProviders();
 
-
+builder.Services.AddScoped<ValidationFilterAttribute>();
 
 builder.Services.AddControllers()
     .AddApplicationPart(typeof(BooklyBookStoreApp.Presentation.AssemblyReference).Assembly)

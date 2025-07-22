@@ -1,6 +1,7 @@
 ﻿using BooklyBookStoreApp.Application.DTOs.BookDtos;
 using BooklyBookStoreApp.Application.Services;
 using BooklyBookStoreApp.Presentation.Abstractions;
+using BooklyBookStoreApp.Presentation.ActionFilters;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BooklyBookStoreApp.Presentation.Controllers;
@@ -18,15 +19,16 @@ public class BooksController:BaseApiController
         var result = await _manager.BookService.GetAllBooksWithCategoryNameAsync(false);
         return Ok(result);
     }
+    [ServiceFilter(typeof(ValidationFilterAttribute))]
     [HttpPost]
     public async Task<IActionResult> CreateBook([FromBody] CreateBookDto bookDto)
     {
-        if (!ModelState.IsValid)
-            return BadRequest(ModelState);
+       
 
         var result = await _manager.BookService.CreateBookAsync(bookDto);
         return CreatedAtAction(nameof(GetOneBookWithCategoryName), new { id = result.Id }, new
         {
+            success=true,
             message = "Book has been added successfully",
             data = result
         });
