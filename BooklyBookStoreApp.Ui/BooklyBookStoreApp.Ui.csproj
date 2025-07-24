@@ -8,6 +8,29 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="9.0.6" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="8.0.7" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\booklyBookStore\css\.DS_Store" />
+    <None Include="wwwroot\booklyBookStore\css\bootstrap\.DS_Store" />
+    <None Include="wwwroot\booklyBookStore\css\css\.DS_Store" />
+    <None Include="wwwroot\booklyBookStore\css\css\mixins\.DS_Store" />
+    <None Include="wwwroot\booklyBookStore\fonts\.DS_Store" />
+    <None Include="wwwroot\booklyBookStore\fonts\flaticon\.DS_Store" />
+    <None Include="wwwroot\booklyBookStore\fonts\flaticon\font\.DS_Store" />
+    <None Include="wwwroot\booklyBookStore\fonts\ionicons\fonts\.DS_Store" />
+    <None Include="wwwroot\booklyBookStore\images\.DS_Store" />
+    <None Include="wwwroot\booklyBookStore\js\.DS_Store" />
+    <None Include="wwwroot\booklyBookStore\scss\.DS_Store" />
+    <None Include="wwwroot\booklyBookStore\scss\bootstrap\.DS_Store" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Areas\ContactPage\" />
+    <Folder Include="Areas\AboutPage\" />
+    <Folder Include="Areas\NewFolder\" />
+    <Folder Include="Views\Shared\Components\" />
   </ItemGroup>
 
 </Project>
