@@ -2,7 +2,7 @@
 using FluentValidation;
 
 
-namespace BooklyBookStoreApp.Application.Validator;
+namespace BooklyBookStoreApp.Application.Validator.BookValidators;
 
 public class CreateBookDtoValidator : AbstractValidator<CreateBookDto>
 {

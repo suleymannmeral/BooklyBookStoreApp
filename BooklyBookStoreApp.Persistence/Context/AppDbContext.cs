@@ -20,6 +20,8 @@ namespace BooklyBookStoreApp.Persistence.Context
 
         public DbSet<Book> Books { get; set; }
         public DbSet<Category> Categories { get; set; }
+        public DbSet<BasketItem> BasketItems { get; set; }
+        public DbSet<Basket> Baskets { get; set; }
         // diğer DbSet'ler
     }
 }

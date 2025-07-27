@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using BooklyBookStoreApp.Application.DTOs.BookDtos;
+using BooklyBookStoreApp.Application.DTOs.CategoryDtos;
 using BooklyBookStoreApp.Domain.Entitites;
 
 namespace BooklyBookStoreApp.Persistence.Mappings;
@@ -18,7 +19,10 @@ public sealed class MappingProfile : Profile
 
         CreateMap<GetAllBooksWithCategoryNameDto, Book>().ReverseMap()
              .ForMember(dest => dest.CategoryName, opt => opt.MapFrom(src => src.Category.Name));
-    
+
+        CreateMap<CreateCategoryDto, Category>().ReverseMap();
+        CreateMap<CategoryDto, Category>().ReverseMap();
+
 
 
     }

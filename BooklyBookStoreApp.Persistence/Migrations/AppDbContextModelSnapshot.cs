@@ -99,6 +99,54 @@ namespace BooklyBookStoreApp.Persistence.Migrations
                     b.ToTable("AspNetUsers", (string)null);
                 });
 
+            modelBuilder.Entity("BooklyBookStoreApp.Domain.Entitites.Basket", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("AppUserID")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("AppUserID");
+
+                    b.ToTable("Baskets");
+                });
+
+            modelBuilder.Entity("BooklyBookStoreApp.Domain.Entitites.BasketItem", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("BasketId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("BookId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Quantity")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("BasketId");
+
+                    b.HasIndex("BookId");
+
+                    b.ToTable("BasketItems");
+                });
+
             modelBuilder.Entity("BooklyBookStoreApp.Domain.Entitites.Book", b =>
                 {
                     b.Property<int>("Id")
@@ -389,6 +437,36 @@ namespace BooklyBookStoreApp.Persistence.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
+            modelBuilder.Entity("BooklyBookStoreApp.Domain.Entitites.Basket", b =>
+                {
+                    b.HasOne("BooklyBookStoreApp.Domain.Entitites.AppUser", "AppUser")
+                        .WithMany()
+                        .HasForeignKey("AppUserID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("AppUser");
+                });
+
+            modelBuilder.Entity("BooklyBookStoreApp.Domain.Entitites.BasketItem", b =>
+                {
+                    b.HasOne("BooklyBookStoreApp.Domain.Entitites.Basket", "Basket")
+                        .WithMany("BasketItems")
+                        .HasForeignKey("BasketId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("BooklyBookStoreApp.Domain.Entitites.Book", "Book")
+                        .WithMany()
+                        .HasForeignKey("BookId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Basket");
+
+                    b.Navigation("Book");
+                });
+
             modelBuilder.Entity("BooklyBookStoreApp.Domain.Entitites.Book", b =>
                 {
                     b.HasOne("BooklyBookStoreApp.Domain.Entitites.Category", "Category")
@@ -526,6 +604,11 @@ namespace BooklyBookStoreApp.Persistence.Migrations
                     b.Navigation("Favorites");
 
                     b.Navigation("Orders");
+                });
+
+            modelBuilder.Entity("BooklyBookStoreApp.Domain.Entitites.Basket", b =>
+                {
+                    b.Navigation("BasketItems");
                 });
 
             modelBuilder.Entity("BooklyBookStoreApp.Domain.Entitites.Book", b =>
