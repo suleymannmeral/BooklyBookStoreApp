@@ -22,6 +22,9 @@ public sealed class MappingProfile : Profile
 
         CreateMap<CreateCategoryDto, Category>().ReverseMap();
         CreateMap<CategoryDto, Category>().ReverseMap();
+        CreateMap<GetOneCategoryByIdDto, CategoryDto>().ReverseMap();
+        CreateMap<GetAllCategoriesDto, Category>().ReverseMap();
+        CreateMap<UpdateCategoryDto, Category>().ReverseMap();
 
 
 

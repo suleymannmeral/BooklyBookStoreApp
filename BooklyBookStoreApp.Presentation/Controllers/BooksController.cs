@@ -19,6 +19,7 @@ public class BooksController:BaseApiController
         var result = await _manager.BookService.GetAllBooksWithCategoryNameAsync(false);
         return Ok(result);
     }
+
     [ServiceFilter(typeof(ValidationFilterAttribute))]
     [HttpPost]
     public async Task<IActionResult> CreateBook([FromBody] CreateBookDto bookDto)
@@ -48,8 +49,8 @@ public class BooksController:BaseApiController
         return Ok("Book has been deleted succesfully");
     }
 
+    [ServiceFilter(typeof(ValidationFilterAttribute))]
     [HttpPut("{id:int}")]
-
     public async Task<IActionResult> UpdateBook([FromRoute(Name = "id")] int id, [FromBody] UpdateBookDto bookDto)
     {
 

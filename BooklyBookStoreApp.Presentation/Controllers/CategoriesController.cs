@@ -14,6 +14,14 @@ public sealed class CategoriesController : BaseApiController
     {
     }
 
+
+
+    [HttpGet]
+    public async Task<IActionResult> GetAllCategories()
+    {
+        var result = await _manager.CategoryService.GetAllCategoriesAsync(false);
+        return Ok(result);
+    }
     [ServiceFilter(typeof(ValidationFilterAttribute))]
     [HttpPost]
     public async Task<IActionResult> CreateCategory([FromBody] CreateCategoryDto createCategoryDto)
@@ -30,11 +38,27 @@ public sealed class CategoriesController : BaseApiController
     }
 
     [HttpGet("{id:int}")]
-    [ServiceFilter(typeof(ValidationFilterAttribute))]
+
 
     public async Task<IActionResult> GetOneCategoryById(int id)
     {
         var result = await _manager.CategoryService.GetOneCategoryByIdAsync(id, false);
         return Ok(result);
+    }
+
+    [HttpDelete("{id:int}")]
+    public async Task<IActionResult> DeleteCategory([FromRoute(Name = "id")] int id)
+    {
+        await _manager.CategoryService.DeleteCategoryAsync(id, false);
+        return Ok("Category has been deleted succesfully");
+    }
+
+    [ServiceFilter(typeof(ValidationFilterAttribute))]
+    [HttpPut("{id:int}")]
+    public async Task<IActionResult> UpdateCategory([FromRoute(Name = "id")] int id, [FromBody] UpdateCategoryDto updateCategoryDto)
+    {
+
+        await _manager.CategoryService.UpdateCategoryAsync(id, updateCategoryDto , false);
+        return Ok("Category has been updated successfully");
     }
 }
