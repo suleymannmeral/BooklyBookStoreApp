@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using BooklyBookStoreApp.Application.DTOs.BookDtos;
 using BooklyBookStoreApp.Application.DTOs.CategoryDtos;
+using BooklyBookStoreApp.Application.DTOs.Favorites;
 using BooklyBookStoreApp.Application.DTOs.UserDtos;
 using BooklyBookStoreApp.Domain.Entitites;
 
@@ -29,6 +30,11 @@ public sealed class MappingProfile : Profile
 
 
         CreateMap<RegisterUserDto, User>().ReverseMap();
+
+
+        CreateMap<CreateFavoriteDto,Favorites>().ReverseMap();
+        CreateMap<FavoriteDto, Favorites>().ReverseMap()
+            .ForMember(dest => dest.BookName, opt => opt.MapFrom(src => src.Book.Title));
 
 
     }

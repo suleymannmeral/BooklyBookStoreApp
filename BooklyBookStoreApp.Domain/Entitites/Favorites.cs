@@ -10,6 +10,6 @@ namespace BooklyBookStoreApp.Domain.Entitites
         // Kitap İlişkisi
         public int BookID { get; set; }
         public Book Book { get; set; }
-        public DateTime CreatedAt  { get; set; }
+        public DateTime CreatedAt  { get; set; }= DateTime.Now;
     }
 }

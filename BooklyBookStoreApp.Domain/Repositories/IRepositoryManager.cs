@@ -4,6 +4,7 @@ public interface IRepositoryManager                          // Repoları Burada
 {
     IBookRepository Book { get; }
     ICategoryRepository Category { get; }
+    IFavoriteRepository Favorite { get; }
     Task Save();
 
 

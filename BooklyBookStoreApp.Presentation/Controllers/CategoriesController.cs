@@ -15,19 +15,17 @@ public sealed class CategoriesController : BaseApiController
     }
 
 
-
     [HttpGet]
     public async Task<IActionResult> GetAllCategories()
     {
         var result = await _manager.CategoryService.GetAllCategoriesAsync(false);
         return Ok(result);
     }
+
     [ServiceFilter(typeof(ValidationFilterAttribute))]
     [HttpPost]
     public async Task<IActionResult> CreateCategory([FromBody] CreateCategoryDto createCategoryDto)
     {
-
-
         var result = await _manager.CategoryService.CreateCategoryAsync(createCategoryDto);
         return CreatedAtAction(nameof(GetOneCategoryById), new
         {
@@ -38,8 +36,6 @@ public sealed class CategoriesController : BaseApiController
     }
 
     [HttpGet("{id:int}")]
-
-
     public async Task<IActionResult> GetOneCategoryById(int id)
     {
         var result = await _manager.CategoryService.GetOneCategoryByIdAsync(id, false);

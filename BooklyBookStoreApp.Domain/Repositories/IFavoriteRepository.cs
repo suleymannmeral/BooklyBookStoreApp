@@ -1,9 +1,9 @@
-﻿
-
-using BooklyBookStoreApp.Domain.Entitites;
+﻿using BooklyBookStoreApp.Domain.Entitites;
 
 namespace BooklyBookStoreApp.Domain.Repositories;
 
 public interface IFavoriteRepository:IRepositoryBase<Favorites>
 {
+    void CreateFavorite(Favorites favorites);
+
 }

@@ -158,6 +158,22 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "BooklyBookStoreApp.Presentation.Controllers.FavoritesController",
+    "Method": "CreateFavorite",
+    "RelativePath": "api/Favorites",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "BooklyBookStoreApp.Application.DTOs.Favorites.CreateFavoriteDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "BooklyBookStoreApp.Presentation.Controllers.UsersController",
     "Method": "RegisterUser",
     "RelativePath": "api/Users",
