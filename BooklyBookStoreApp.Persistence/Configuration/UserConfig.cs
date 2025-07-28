@@ -9,9 +9,9 @@ using System.Threading.Tasks;
 
 namespace BooklyBookStoreApp.Persistence.Configuration
 {
-    public class AppUserConfig : IEntityTypeConfiguration<AppUser>
+    public class UserConfig : IEntityTypeConfiguration<User>
     {
-        public void Configure(EntityTypeBuilder<AppUser> builder)
+        public void Configure(EntityTypeBuilder<User> builder)
         {
             builder.Property(x=>x.Adress)
                 .HasMaxLength(400);
@@ -21,18 +21,18 @@ namespace BooklyBookStoreApp.Persistence.Configuration
                .HasMaxLength(50);
 
             builder.HasMany(u=>u.Orders)
-                .WithOne(o=>o.AppUser)
-                .HasForeignKey(o=>o.AppUserID)
+                .WithOne(o=>o.User)
+                .HasForeignKey(o=>o.UserId)
                 .OnDelete(DeleteBehavior.Cascade);
 
             builder.HasMany(u => u.Favorites)
-              .WithOne(f => f.AppUser)
-              .HasForeignKey(f => f.AppUserID)
+              .WithOne(f => f.User)
+              .HasForeignKey(f => f.UserId)
               .OnDelete(DeleteBehavior.Cascade);
 
             builder.HasMany(u=>u.BookComments)
-                .WithOne(bc=>bc.AppUser)
-                .HasForeignKey(bc=>bc.AppUserID)
+                .WithOne(bc=>bc.User)
+                .HasForeignKey(bc=>bc.UserId)
                 .OnDelete(DeleteBehavior.Cascade);
 
 

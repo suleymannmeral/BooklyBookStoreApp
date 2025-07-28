@@ -6,6 +6,7 @@ namespace BooklyBookStoreApp.Application.Services
     {
         IBookService BookService { get; }
         ICategoryService CategoryService { get; }
+        IUserService UserService { get; }
 
     }
 }

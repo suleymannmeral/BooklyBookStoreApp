@@ -4,9 +4,8 @@ namespace BooklyBookStoreApp.Domain.Entitites
     public class Favorites
     {
         public int Id { get; set; }
-        //AppUser ilişkisi
-        public string AppUserID { get; set; }  // Foreign Key
-        public AppUser AppUser { get; set; }
+        public string UserId { get; set; }  // Foreign Key
+        public User User { get; set; }
 
         // Kitap İlişkisi
         public int BookID { get; set; }

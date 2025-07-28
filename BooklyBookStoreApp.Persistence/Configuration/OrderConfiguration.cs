@@ -20,9 +20,9 @@ namespace BooklyBookStoreApp.Persistence.Configuration
        .HasForeignKey(ob => ob.OrderId)
        .OnDelete(DeleteBehavior.Restrict);
 
-            builder.HasOne(o=>o.AppUser)
+            builder.HasOne(o=>o.User)
                 .WithMany(u=>u.Orders)
-                .HasForeignKey(o=>o.AppUserID)
+                .HasForeignKey(o=>o.UserId)
                 .OnDelete(DeleteBehavior.Cascade);
 
 

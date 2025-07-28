@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using BooklyBookStoreApp.Application.DTOs.BookDtos;
 using BooklyBookStoreApp.Application.DTOs.CategoryDtos;
+using BooklyBookStoreApp.Application.DTOs.UserDtos;
 using BooklyBookStoreApp.Domain.Entitites;
 
 namespace BooklyBookStoreApp.Persistence.Mappings;
@@ -26,6 +27,8 @@ public sealed class MappingProfile : Profile
         CreateMap<GetAllCategoriesDto, Category>().ReverseMap();
         CreateMap<UpdateCategoryDto, Category>().ReverseMap();
 
+
+        CreateMap<RegisterUserDto, User>().ReverseMap();
 
 
     }

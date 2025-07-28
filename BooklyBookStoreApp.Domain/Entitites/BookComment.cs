@@ -7,8 +7,8 @@ namespace BooklyBookStoreApp.Domain.Entitites
         public string Description { get; set; } = null!;
 
         // User Rel
-        public string AppUserID { get; set; }
-        public AppUser AppUser { get; set; }   //navigation property 
+        public string UserId { get; set; }
+        public User User { get; set; }   //navigation property 
 
         public int BookID { get; set; }
         public Book Book { get; set; }

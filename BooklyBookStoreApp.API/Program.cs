@@ -19,6 +19,7 @@ builder.Services.AddScoped<IBookService, BookService>();
 builder.Services.AddScoped<IRepositoryManager,RepositoryManager>();
 builder.Services.AddAutoMapper(typeof(BooklyBookStoreApp.Persistence.AssemblyReference).Assembly);
 builder.Services.AddScoped<IServiceManager, ServiceManager>();
+builder.Services.AddScoped<IUserService, UserService>();
 
 // Connection string
 string connectionString = builder.Configuration.GetConnectionString("SqlServer");
@@ -27,9 +28,9 @@ string connectionString = builder.Configuration.GetConnectionString("SqlServer")
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlServer(connectionString));
 
-builder.Services.AddIdentity<AppUser, IdentityRole>()
-    .AddEntityFrameworkStores<AppDbContext>()
-    .AddDefaultTokenProviders();
+builder.Services.AddIdentity<User, IdentityRole>()
+    .AddEntityFrameworkStores<AppDbContext>();
+   
 
 builder.Services.AddScoped<ValidationFilterAttribute>();
 
