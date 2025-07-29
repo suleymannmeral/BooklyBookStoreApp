@@ -1,16 +1,13 @@
 ﻿using BooklyBookStoreApp.Application.DTOs.BookDtos;
 using BooklyBookStoreApp.Application.DTOs.Favorites;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using BooklyBookStoreApp.Application.DTOs.FavoritesDtos;
 
-namespace BooklyBookStoreApp.Application.Services
+namespace BooklyBookStoreApp.Application.Services;
+
+public interface IFavoriteService
 {
-    public interface IFavoriteService
-    {
-        Task<FavoriteDto> CreateFavoriteAsync(CreateFavoriteDto createBookDto);
+    Task<FavoriteDto> CreateFavoriteAsync(CreateFavoriteDto createBookDto);
+    Task<IEnumerable<GetAllFavoritesByUsernameWithBookDetailsDto>> GetAllFavoritesByUserIdWithBookDetailsAsync(string userid);
 
-    }
+
 }

@@ -16,6 +16,8 @@ namespace BooklyBookStoreApp.Persistence.Repositorires
         }
 
         public void CreateFavorite(Favorites favorites) => Create(favorites);
-     
+
+        public IQueryable<Favorites> GetAll(bool trackChanges) => FindAll(trackChanges);
+       
     }
 }

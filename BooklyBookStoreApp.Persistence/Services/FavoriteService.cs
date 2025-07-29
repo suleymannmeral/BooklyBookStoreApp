@@ -1,8 +1,10 @@
 ﻿using AutoMapper;
 using BooklyBookStoreApp.Application.DTOs.Favorites;
+using BooklyBookStoreApp.Application.DTOs.FavoritesDtos;
 using BooklyBookStoreApp.Application.Services;
 using BooklyBookStoreApp.Domain.Entitites;
 using BooklyBookStoreApp.Domain.Repositories;
+using Microsoft.EntityFrameworkCore;
 
 namespace BooklyBookStoreApp.Persistence.Services;
 
@@ -16,6 +18,19 @@ public sealed class FavoriteService(IRepositoryManager manager, IMapper mapper) 
         manager.Favorite.Create(favorite);
         await manager.Save();
         return  mapper.Map<FavoriteDto>(favorite);
+
+    }
+
+    public async Task<IEnumerable<GetAllFavoritesByUsernameWithBookDetailsDto>> GetAllFavoritesByUserIdWithBookDetailsAsync(string userid)
+    {
+        var favorites = await manager.Favorite.GetAll(false)
+      .Include(f => f.Book)
+      .Include(f => f.User)
+      .Where(f => f.User.Id == userid)
+      .ToListAsync();
+
+        var result = mapper.Map<List<GetAllFavoritesByUsernameWithBookDetailsDto>>(favorites);
+        return result;
 
     }
 }

@@ -28,5 +28,12 @@ namespace BooklyBookStoreApp.Presentation.Controllers
             });
         }
 
+        [HttpGet]
+        public async Task<IActionResult>GetAllFavoritesByUserIdWithBookDetails(string userid)
+        {
+            var result =await _manager.FavoriteService.GetAllFavoritesByUserIdWithBookDetailsAsync(userid);
+            return Ok(result);
+        }
+
     }
 }

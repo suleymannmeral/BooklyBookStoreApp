@@ -5,5 +5,7 @@ namespace BooklyBookStoreApp.Domain.Repositories;
 public interface IFavoriteRepository:IRepositoryBase<Favorites>
 {
     void CreateFavorite(Favorites favorites);
+    IQueryable<Favorites> GetAll(bool trackChanges);
+
 
 }

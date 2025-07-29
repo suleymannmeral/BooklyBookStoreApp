@@ -7,6 +7,6 @@ public record FavoriteDto
     }
 
     public  int Id { get; set; }
-    public  string BookName { get; set; }
+    public  int BookId { get; set; }
 }
 
