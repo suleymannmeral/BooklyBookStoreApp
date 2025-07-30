@@ -34,7 +34,7 @@ public sealed class MappingProfile : Profile
 
 
         CreateMap<CreateFavoriteDto,Favorites>().ReverseMap();
-        CreateMap<FavoriteDto, Favorites>().ReverseMap();
+        CreateMap<Favorites, FavoriteDto>().ReverseMap();
         CreateMap<Favorites, GetAllFavoritesByUsernameWithBookDetailsDto>()
     .ForMember(dest => dest.FavoriteId, opt => opt.MapFrom(src => src.Id))
     .ForMember(dest => dest.BookId, opt => opt.MapFrom(src => src.BookID))

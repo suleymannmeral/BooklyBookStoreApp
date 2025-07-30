@@ -190,6 +190,22 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "BooklyBookStoreApp.Presentation.Controllers.FavoritesController",
+    "Method": "DeleteFavorite",
+    "RelativePath": "api/Favorites/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "BooklyBookStoreApp.Presentation.Controllers.UsersController",
     "Method": "RegisterUser",
     "RelativePath": "api/Users",

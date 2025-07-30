@@ -24,6 +24,7 @@ namespace BooklyBookStoreApp.Presentation.Controllers
             {
                 success = true,
                 message = "Favorites has been added successfully",
+
                 data = result
             });
         }
@@ -33,6 +34,13 @@ namespace BooklyBookStoreApp.Presentation.Controllers
         {
             var result =await _manager.FavoriteService.GetAllFavoritesByUserIdWithBookDetailsAsync(userid);
             return Ok(result);
+        }
+
+        [HttpDelete("{id:int}")]
+        public async Task<IActionResult> DeleteFavorite([FromRoute(Name = "id")] int id)
+        {
+            await _manager.FavoriteService.DeleteFavoriteAsync(id, false);
+            return Ok("Favorite has been deleted succesfully");
         }
 
     }

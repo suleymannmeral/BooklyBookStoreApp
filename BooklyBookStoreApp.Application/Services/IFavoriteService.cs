@@ -6,7 +6,9 @@ namespace BooklyBookStoreApp.Application.Services;
 
 public interface IFavoriteService
 {
-    Task<FavoriteDto> CreateFavoriteAsync(CreateFavoriteDto createBookDto);
+    Task<FavoriteDto> CreateFavoriteAsync(CreateFavoriteDto createFavoriteDto);
+    Task DeleteFavoriteAsync(int id,bool trackChanges);
+    FavoriteDto GetFavoriteByIdAsync(int id,bool trackChanges);
     Task<IEnumerable<GetAllFavoritesByUsernameWithBookDetailsDto>> GetAllFavoritesByUserIdWithBookDetailsAsync(string userid);
 
 

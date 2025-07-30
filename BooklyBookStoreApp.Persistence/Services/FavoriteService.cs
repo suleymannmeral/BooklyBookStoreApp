@@ -21,6 +21,8 @@ public sealed class FavoriteService(IRepositoryManager manager, IMapper mapper) 
 
     }
 
+  
+
     public async Task<IEnumerable<GetAllFavoritesByUsernameWithBookDetailsDto>> GetAllFavoritesByUserIdWithBookDetailsAsync(string userid)
     {
         var favorites = await manager.Favorite.GetAll(false)
@@ -32,5 +34,19 @@ public sealed class FavoriteService(IRepositoryManager manager, IMapper mapper) 
         var result = mapper.Map<List<GetAllFavoritesByUsernameWithBookDetailsDto>>(favorites);
         return result;
 
+    }
+
+    public FavoriteDto GetFavoriteByIdAsync(int id, bool trackChanges)
+    {
+        var favorite=    manager.Favorite.GetOneFavoriteById(id,trackChanges).FirstOrDefault();
+        return  mapper.Map<FavoriteDto>(favorite);
+    }
+
+    public async Task DeleteFavoriteAsync(int id, bool trackChanges)
+    {
+       var favorite=  GetFavoriteByIdAsync(id,trackChanges);
+       var result= mapper.Map<Favorites>(favorite);
+        manager.Favorite.Delete(result);
+       await  manager.Save();
     }
 }
