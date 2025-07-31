@@ -38,7 +38,7 @@ public sealed class FavoriteService(IRepositoryManager manager, IMapper mapper) 
 
     public FavoriteDto GetFavoriteByIdAsync(int id, bool trackChanges)
     {
-        var favorite=    manager.Favorite.GetOneFavoriteById(id,trackChanges).FirstOrDefault();
+        var favorite= manager.Favorite.GetOneFavoriteById(id,trackChanges).FirstOrDefault();
         return  mapper.Map<FavoriteDto>(favorite);
     }
 

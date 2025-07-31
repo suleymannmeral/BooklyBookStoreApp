@@ -20,6 +20,7 @@ builder.Services.AddScoped<IRepositoryManager,RepositoryManager>();
 builder.Services.AddAutoMapper(typeof(BooklyBookStoreApp.Persistence.AssemblyReference).Assembly);
 builder.Services.AddScoped<IServiceManager, ServiceManager>();
 builder.Services.AddScoped<IUserService, UserService>();
+builder.Services.AddScoped<IBasketService, BasketService>();
 
 // Connection string
 string connectionString = builder.Configuration.GetConnectionString("SqlServer");

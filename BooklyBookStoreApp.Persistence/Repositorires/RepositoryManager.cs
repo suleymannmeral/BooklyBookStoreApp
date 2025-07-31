@@ -9,6 +9,7 @@ public class RepositoryManager : IRepositoryManager         //unit of work patte
     private readonly Lazy<IBookRepository> _bookRepository;          // 
     private readonly Lazy<ICategoryRepository> _categoryRepository;          // 
     private readonly Lazy<IFavoriteRepository> _favoriteRepository;          // 
+    private readonly Lazy<IBasketRepository> _basketRepository;          // 
 
     public RepositoryManager(AppDbContext context)
     {
@@ -16,11 +17,13 @@ public class RepositoryManager : IRepositoryManager         //unit of work patte
         _bookRepository= new Lazy<IBookRepository>(() => new BookRepository(context)); 
         _categoryRepository= new Lazy<ICategoryRepository>(() => new CategoryRepository(context)); 
         _favoriteRepository= new Lazy<IFavoriteRepository>(() => new FavoriteRepository(context)); 
+        _basketRepository= new Lazy<IBasketRepository>(() => new BasketRepository(context)); 
     }
 
     public IBookRepository Book => _bookRepository.Value;          // newlenmis hali donuelcek nesne kullanıldıgı anda ilgili ifade newlenir
     public ICategoryRepository Category => _categoryRepository.Value;      
     public IFavoriteRepository Favorite => _favoriteRepository.Value;      
+    public IBasketRepository Basket => _basketRepository.Value;      
 
     public async Task Save()
     {

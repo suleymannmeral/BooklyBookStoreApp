@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using BooklyBookStoreApp.Application.DTOs.BasketDtos;
 using BooklyBookStoreApp.Application.DTOs.BookDtos;
 using BooklyBookStoreApp.Application.DTOs.CategoryDtos;
 using BooklyBookStoreApp.Application.DTOs.Favorites;
@@ -42,6 +43,11 @@ public sealed class MappingProfile : Profile
     .ForMember(dest => dest.PictureUrl, opt => opt.MapFrom(src => src.Book.PictureURl))
     .ForMember(dest => dest.Price, opt => opt.MapFrom(src => src.Book.Price))
     .ForMember(dest => dest.CreatedDate, opt => opt.MapFrom(src => src.CreatedAt));
+
+
+        CreateMap<BasketItem, BasketItemDto>();
+        CreateMap<Basket, BasketDto>()
+            .ForMember(dest => dest.Items, opt => opt.MapFrom(src => src.BasketItems));
 
 
 

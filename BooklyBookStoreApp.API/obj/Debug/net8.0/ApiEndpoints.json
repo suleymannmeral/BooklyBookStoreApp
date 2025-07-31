@@ -1,5 +1,37 @@
 [
   {
+    "ContainingType": "BooklyBookStoreApp.Presentation.Controllers.BasketController",
+    "Method": "AddToBasket",
+    "RelativePath": "api/Basket/add",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "BooklyBookStoreApp.Application.DTOs.BasketDtos.AddBasketItemDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BooklyBookStoreApp.Presentation.Controllers.BasketController",
+    "Method": "GetBasketItems",
+    "RelativePath": "api/Basket/basket-items/{userId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "BooklyBookStoreApp.Presentation.Controllers.BooksController",
     "Method": "GetAllBooksWithCategoryName",
     "RelativePath": "api/Books",
