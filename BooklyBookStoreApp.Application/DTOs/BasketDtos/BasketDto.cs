@@ -9,6 +9,7 @@ namespace BooklyBookStoreApp.Application.DTOs.BasketDtos
     public record BasketDto
     {
         public List<BasketItemDto> Items { get; set; } = default!;
+        public decimal TotalPrice { get; set; }
     }
 
 

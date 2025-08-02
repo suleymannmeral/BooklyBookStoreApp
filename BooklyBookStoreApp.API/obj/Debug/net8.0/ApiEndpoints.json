@@ -32,6 +32,22 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "BooklyBookStoreApp.Presentation.Controllers.BasketController",
+    "Method": "ClearBasket",
+    "RelativePath": "api/Basket/clear-basket/{userid}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userid",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "BooklyBookStoreApp.Presentation.Controllers.BooksController",
     "Method": "GetAllBooksWithCategoryName",
     "RelativePath": "api/Books",

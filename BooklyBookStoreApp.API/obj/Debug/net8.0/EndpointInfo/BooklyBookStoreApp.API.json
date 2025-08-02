@@ -58,6 +58,28 @@
         }
       }
     },
+    "/api/Basket/clear-basket/{userid}": {
+      "delete": {
+        "tags": [
+          "Basket"
+        ],
+        "parameters": [
+          {
+            "name": "userid",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/Books": {
       "get": {
         "tags": [

@@ -45,9 +45,14 @@ public sealed class MappingProfile : Profile
     .ForMember(dest => dest.CreatedDate, opt => opt.MapFrom(src => src.CreatedAt));
 
 
-        CreateMap<BasketItem, BasketItemDto>();
+        CreateMap<BasketItem, BasketItemDto>()
+           .ForMember(dest => dest.BookTitle, opt => opt.MapFrom(src => src.Book.Title))
+           .ForMember(dest => dest.BookPrice, opt => opt.MapFrom(src => src.Book.Price));
+
         CreateMap<Basket, BasketDto>()
-            .ForMember(dest => dest.Items, opt => opt.MapFrom(src => src.BasketItems));
+            .ForMember(dest => dest.Items, opt => opt.MapFrom(src => src.BasketItems))
+            .ForMember(dest => dest.TotalPrice, opt => opt.MapFrom(src =>
+                src.BasketItems.Sum(item => item.Quantity * item.Book.Price)));
 
 
 

@@ -33,5 +33,13 @@ public class BasketController : ControllerBase
         return Ok("Sepete eklendi");
     }
 
+    [HttpDelete("clear-basket/{userid}")]
+    public async Task<IActionResult>ClearBasket(string userid)
+    {
+         await _basketService.ClearBasketAsync(userid);
+        return Ok("Delete Successfully");
+
+    }
+
 
 }
