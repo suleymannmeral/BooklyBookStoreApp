@@ -13,11 +13,20 @@ public class UsersController : BaseApiController
     {
     }
 
-    [HttpPost]
+    [HttpPost("register")]
     public async Task<IActionResult>RegisterUser(RegisterUserDto request)
     {
        await  _manager.UserService.RegisterAsync(request);
         return Ok("User registered successfully");
+
+    }
+
+
+    [HttpPost("login")]
+    public async Task<IActionResult> LoginUser(LoginUserDto request)
+    {
+        var response=await _manager.UserService.LoginAsync(request);
+        return Ok(response);
 
     }
 }

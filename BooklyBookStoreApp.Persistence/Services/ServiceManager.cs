@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using BooklyBookStoreApp.Application.Abstractions;
 using BooklyBookStoreApp.Application.Services;
 using BooklyBookStoreApp.Domain.Entitites;
 using BooklyBookStoreApp.Domain.Repositories;
@@ -13,11 +14,11 @@ public class ServiceManager : IServiceManager
     private readonly Lazy<IUserService> _userService;
     private readonly Lazy<IFavoriteService> _favoriteService;
     private readonly Lazy<IBasketService> _basketService;
-    public ServiceManager(IMapper mapper, IRepositoryManager manager,UserManager<User> userManager)
+    public ServiceManager(IMapper mapper, IRepositoryManager manager,UserManager<User> userManager,IJwtProvider jwtProvider)
     {
         _bookService = new Lazy<IBookService>(() => new BookService(mapper,manager));
         _categoryService = new Lazy<ICategoryService>(() => new CategoryService(manager,mapper));
-        _userService = new Lazy<IUserService>(() => new UserService(userManager,mapper));
+        _userService = new Lazy<IUserService>(() => new UserService(userManager,mapper,jwtProvider));
         _favoriteService = new Lazy<IFavoriteService>(() => new FavoriteService(manager,mapper));
         _basketService = new Lazy<IBasketService>(() => new BasketService(manager,mapper));
     }

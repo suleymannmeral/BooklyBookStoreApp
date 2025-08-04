@@ -29,6 +29,7 @@ namespace BooklyBookStoreApp.API.Middlewares
                             StatusCode = context.Response.StatusCode,
                             Message = contextFeature.Error.Message
                         }.ToString());
+                       
                     }
                 });
             });

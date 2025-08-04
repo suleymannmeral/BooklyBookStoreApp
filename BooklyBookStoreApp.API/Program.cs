@@ -1,15 +1,20 @@
 ﻿using BooklyBookStoreApp.API.Middlewares;
+using BooklyBookStoreApp.API.OptionsSetup;
+using BooklyBookStoreApp.Application.Abstractions;
 using BooklyBookStoreApp.Application.Services;
 using BooklyBookStoreApp.Domain.Entitites;
 using BooklyBookStoreApp.Domain.Repositories;
+using BooklyBookStoreApp.Infrastructure.Authentication;
 using BooklyBookStoreApp.Persistence.Context;
 using BooklyBookStoreApp.Persistence.Repositorires;
 using BooklyBookStoreApp.Persistence.Services;
 using BooklyBookStoreApp.Presentation.ActionFilters;
 using FluentValidation.AspNetCore;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.OpenApi.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -21,6 +26,14 @@ builder.Services.AddAutoMapper(typeof(BooklyBookStoreApp.Persistence.AssemblyRef
 builder.Services.AddScoped<IServiceManager, ServiceManager>();
 builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddScoped<IBasketService, BasketService>();
+builder.Services.ConfigureOptions<JwtOptionsSetup>();
+builder.Services.ConfigureOptions<JwtBearerOptionsSetup>();
+
+builder.Services.AddScoped<IJwtProvider, JwtProvider>();
+
+builder.Services.AddAuthentication().AddJwtBearer();
+builder.Services.AddAuthorization();
+
 
 // Connection string
 string connectionString = builder.Configuration.GetConnectionString("SqlServer");
@@ -67,14 +80,32 @@ builder.Services.AddControllers()
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
-builder.Services.AddCors(options =>
+builder.Services.AddSwaggerGen(setup =>
 {
-    options.AddPolicy("AllowAll",
-        policyBuilder => policyBuilder.AllowAnyOrigin()
-                                      .AllowAnyMethod()
-                                      .AllowAnyHeader());
+    var jwtSecuritySheme = new OpenApiSecurityScheme
+    {
+        BearerFormat = "JWT",
+        Name = "JWT Authentication",
+        In = ParameterLocation.Header,
+        Type = SecuritySchemeType.Http,
+        Scheme = JwtBearerDefaults.AuthenticationScheme,
+        Description = "Put **_ONLY_** yourt JWT Bearer token on textbox below!",
+
+        Reference = new OpenApiReference
+        {
+            Id = JwtBearerDefaults.AuthenticationScheme,
+            Type = ReferenceType.SecurityScheme
+        }
+    };
+
+    setup.AddSecurityDefinition(jwtSecuritySheme.Reference.Id, jwtSecuritySheme);
+
+    setup.AddSecurityRequirement(new OpenApiSecurityRequirement
+                {
+                    { jwtSecuritySheme, Array.Empty<string>() }
+                });
 });
+    
 
 var app = builder.Build();
 
@@ -92,7 +123,8 @@ app.ConfigureExceptionHandler();
 
 app.UseHttpsRedirection();
 
-app.UseAuthorization();
+app.UseAuthentication(); // ⬅️ Bunu EKLE
+
 
 app.MapControllers();
 

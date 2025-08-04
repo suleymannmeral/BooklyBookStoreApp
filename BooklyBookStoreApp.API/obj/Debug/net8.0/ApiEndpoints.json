@@ -255,8 +255,24 @@
   },
   {
     "ContainingType": "BooklyBookStoreApp.Presentation.Controllers.UsersController",
+    "Method": "LoginUser",
+    "RelativePath": "api/Users/login",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "BooklyBookStoreApp.Application.DTOs.UserDtos.LoginUserDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BooklyBookStoreApp.Presentation.Controllers.UsersController",
     "Method": "RegisterUser",
-    "RelativePath": "api/Users",
+    "RelativePath": "api/Users/register",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,

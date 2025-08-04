@@ -1,7 +1,9 @@
 ﻿using BooklyBookStoreApp.Application.DTOs.BasketDtos;
 using BooklyBookStoreApp.Application.Services;
 using BooklyBookStoreApp.Presentation.Abstractions;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using System.Security.Claims;
 
 
 namespace BooklyBookStoreApp.Presentation.Controllers;
@@ -9,6 +11,7 @@ namespace BooklyBookStoreApp.Presentation.Controllers;
 [ApiController]
 [Route("api/[controller]")]
 
+[Authorize(AuthenticationSchemes ="Bearer")]
 public class BasketController : ControllerBase
 {
     private readonly IBasketService _basketService;
@@ -28,7 +31,13 @@ public class BasketController : ControllerBase
     [HttpPost("add")]
     public async Task<IActionResult> AddToBasket([FromBody] AddBasketItemDto dto)
     {
-        var userId = "ee7df6bf-5e2c-4a42-81e3-18dffb65d09f";
+        if (!User.Identity.IsAuthenticated)
+        {
+            return Unauthorized("Token doğrulanamadı.");
+        }
+
+        var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+        // userId null olmamalı
         await _basketService.AddItemToBasketAsync(userId, dto);
         return Ok("Sepete eklendi");
     }
