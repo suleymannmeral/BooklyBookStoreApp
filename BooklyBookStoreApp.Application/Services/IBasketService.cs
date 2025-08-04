@@ -8,4 +8,5 @@ public interface IBasketService
     Task AddItemToBasketAsync(string userId, AddBasketItemDto dto);
     Task RemoveItemFromBasketAsync(string userId, int bookId);
     Task ClearBasketAsync(string userId);
+    Task CreateUserBasket(string userId);
 }

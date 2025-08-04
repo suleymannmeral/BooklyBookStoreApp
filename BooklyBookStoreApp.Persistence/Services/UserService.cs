@@ -14,14 +14,14 @@ public class UserService : IUserService
     private readonly UserManager<User>_userManager;
     private readonly IMapper _mapper;
     private readonly IJwtProvider _jwtProvider;
-    private readonly IRepositoryManager _repositoryManager;
+    private readonly IBasketService _basketService;
 
-    public UserService(UserManager<User> userManager, IMapper mapper, IJwtProvider jwtProvider, IRepositoryManager repositoryManager)
+    public UserService(UserManager<User> userManager, IMapper mapper, IJwtProvider jwtProvider, IBasketService basketService)
     {
         _userManager = userManager;
         _mapper = mapper;
         _jwtProvider = jwtProvider;
-        _repositoryManager = repositoryManager;
+        _basketService = basketService;
     }
 
     public async Task<LoginResponseDto> LoginAsync(LoginUserDto request)
@@ -52,6 +52,7 @@ public class UserService : IUserService
         {
             User user = _mapper.Map<User>(request);
             IdentityResult result = await _userManager.CreateAsync(user, request.Password);
+            await _basketService.CreateUserBasket(user.Id);
             
 
 

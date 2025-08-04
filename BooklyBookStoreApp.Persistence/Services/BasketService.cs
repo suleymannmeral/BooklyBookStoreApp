@@ -81,5 +81,10 @@ public sealed class BasketService : IBasketService
 
     }
 
-   
+    public async Task CreateUserBasket(string userId)
+    {
+        _repositoryManager.Basket.CreateBasket(userId);
+        await _repositoryManager.Save();
+
+    }
 }
