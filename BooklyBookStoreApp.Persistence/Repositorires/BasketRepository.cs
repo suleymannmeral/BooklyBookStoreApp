@@ -13,7 +13,25 @@ namespace BooklyBookStoreApp.Persistence.Repositorires
         }
 
         public void AddBasket(Basket basket)=>Create(basket);
-       
+
+        public void CreateBasket(string userid)
+        {
+            var existingBasket =  _context.Baskets
+            .FirstOrDefault(b => b.UserId == userid);
+
+            if (existingBasket != null)
+                return; 
+
+            var basket = new Basket
+            {
+                UserId = userid,
+                CreatedDate = DateTime.UtcNow
+            };
+
+             _context.Baskets.Add(basket);
+         
+        }
+      
 
         public void DeleteBasket(Basket basket)=>Delete(basket);
      
