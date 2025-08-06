@@ -5045,23 +5045,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\suley\\.nuget\\packages\\": {},
+    "C:\\Users\\mrlsl\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\suley\\source\\repos\\BooklyBookStoreApp\\BooklyBookStoreApp.Persistence\\BooklyBookStoreApp.Persistence.csproj",
+      "projectUniqueName": "C:\\Users\\mrlsl\\Documents\\projects\\BooklyBookStoreApp\\BooklyBookStoreApp\\BooklyBookStoreApp.Persistence\\BooklyBookStoreApp.Persistence.csproj",
       "projectName": "BooklyBookStoreApp.Persistence",
-      "projectPath": "C:\\Users\\suley\\source\\repos\\BooklyBookStoreApp\\BooklyBookStoreApp.Persistence\\BooklyBookStoreApp.Persistence.csproj",
-      "packagesPath": "C:\\Users\\suley\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\suley\\source\\repos\\BooklyBookStoreApp\\BooklyBookStoreApp.Persistence\\obj\\",
+      "projectPath": "C:\\Users\\mrlsl\\Documents\\projects\\BooklyBookStoreApp\\BooklyBookStoreApp\\BooklyBookStoreApp.Persistence\\BooklyBookStoreApp.Persistence.csproj",
+      "packagesPath": "C:\\Users\\mrlsl\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\mrlsl\\Documents\\projects\\BooklyBookStoreApp\\BooklyBookStoreApp\\BooklyBookStoreApp.Persistence\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\suley\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\mrlsl\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -5076,11 +5076,11 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\suley\\source\\repos\\BooklyBookStoreApp\\BooklyBookStoreApp.Application\\BooklyBookStoreApp.Application.csproj": {
-              "projectPath": "C:\\Users\\suley\\source\\repos\\BooklyBookStoreApp\\BooklyBookStoreApp.Application\\BooklyBookStoreApp.Application.csproj"
+            "C:\\Users\\mrlsl\\Documents\\projects\\BooklyBookStoreApp\\BooklyBookStoreApp\\BooklyBookStoreApp.Application\\BooklyBookStoreApp.Application.csproj": {
+              "projectPath": "C:\\Users\\mrlsl\\Documents\\projects\\BooklyBookStoreApp\\BooklyBookStoreApp\\BooklyBookStoreApp.Application\\BooklyBookStoreApp.Application.csproj"
             },
-            "C:\\Users\\suley\\source\\repos\\BooklyBookStoreApp\\BooklyBookStoreApp.Domain\\BooklyBookStoreApp.Domain.csproj": {
-              "projectPath": "C:\\Users\\suley\\source\\repos\\BooklyBookStoreApp\\BooklyBookStoreApp.Domain\\BooklyBookStoreApp.Domain.csproj"
+            "C:\\Users\\mrlsl\\Documents\\projects\\BooklyBookStoreApp\\BooklyBookStoreApp\\BooklyBookStoreApp.Domain\\BooklyBookStoreApp.Domain.csproj": {
+              "projectPath": "C:\\Users\\mrlsl\\Documents\\projects\\BooklyBookStoreApp\\BooklyBookStoreApp\\BooklyBookStoreApp.Domain\\BooklyBookStoreApp.Domain.csproj"
             }
           }
         }
@@ -5140,7 +5140,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.300/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.304/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

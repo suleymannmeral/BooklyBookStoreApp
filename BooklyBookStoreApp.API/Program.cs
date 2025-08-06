@@ -42,7 +42,7 @@ string connectionString = builder.Configuration.GetConnectionString("SqlServer")
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlServer(connectionString));
 
-builder.Services.AddIdentity<User, IdentityRole>()
+builder.Services.AddIdentity<User, Role>()
     .AddEntityFrameworkStores<AppDbContext>();
    
 
