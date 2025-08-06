@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\suley\\source\\repos\\BooklyBookStoreApp\\BooklyBookStoreApp.Ui\\BooklyBookStoreApp.Ui.csproj": {}
+    "C:\\Users\\mrlsl\\Documents\\projects\\BooklyBookStoreApp\\BooklyBookStoreApp\\BooklyBookStoreApp.Ui\\BooklyBookStoreApp.Ui.csproj": {}
   },
   "projects": {
-    "C:\\Users\\suley\\source\\repos\\BooklyBookStoreApp\\BooklyBookStoreApp.Ui\\BooklyBookStoreApp.Ui.csproj": {
+    "C:\\Users\\mrlsl\\Documents\\projects\\BooklyBookStoreApp\\BooklyBookStoreApp\\BooklyBookStoreApp.Ui\\BooklyBookStoreApp.Ui.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\suley\\source\\repos\\BooklyBookStoreApp\\BooklyBookStoreApp.Ui\\BooklyBookStoreApp.Ui.csproj",
+        "projectUniqueName": "C:\\Users\\mrlsl\\Documents\\projects\\BooklyBookStoreApp\\BooklyBookStoreApp\\BooklyBookStoreApp.Ui\\BooklyBookStoreApp.Ui.csproj",
         "projectName": "BooklyBookStoreApp.Ui",
-        "projectPath": "C:\\Users\\suley\\source\\repos\\BooklyBookStoreApp\\BooklyBookStoreApp.Ui\\BooklyBookStoreApp.Ui.csproj",
-        "packagesPath": "C:\\Users\\suley\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\suley\\source\\repos\\BooklyBookStoreApp\\BooklyBookStoreApp.Ui\\obj\\",
+        "projectPath": "C:\\Users\\mrlsl\\Documents\\projects\\BooklyBookStoreApp\\BooklyBookStoreApp\\BooklyBookStoreApp.Ui\\BooklyBookStoreApp.Ui.csproj",
+        "packagesPath": "C:\\Users\\mrlsl\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\mrlsl\\Documents\\projects\\BooklyBookStoreApp\\BooklyBookStoreApp\\BooklyBookStoreApp.Ui\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\suley\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\mrlsl\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -78,7 +78,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.300/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.304/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
