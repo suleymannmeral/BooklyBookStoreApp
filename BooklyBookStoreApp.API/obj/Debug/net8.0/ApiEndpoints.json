@@ -254,6 +254,38 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "BooklyBookStoreApp.Presentation.Controllers.RolesController",
+    "Method": "CreateRoleAsync",
+    "RelativePath": "api/Roles/create-role",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "BooklyBookStoreApp.Application.DTOs.RoleDtos.CreateRoleDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BooklyBookStoreApp.Presentation.Controllers.RolesController",
+    "Method": "CreateUserRoleAsync",
+    "RelativePath": "api/Roles/create-UserRole",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "BooklyBookStoreApp.Application.DTOs.RoleDtos.CreateUserRoleDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "BooklyBookStoreApp.Presentation.Controllers.UsersController",
     "Method": "LoginUser",
     "RelativePath": "api/Users/login",

@@ -9,6 +9,7 @@ namespace BooklyBookStoreApp.Application.Services
         IUserService UserService { get; }
         IFavoriteService FavoriteService { get; }
         IBasketService BasketService { get; }
+        IRoleService RoleService { get; }
 
     }
 }

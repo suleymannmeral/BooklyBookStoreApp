@@ -6,6 +6,7 @@ public interface IRepositoryManager                          // Repoları Burada
     ICategoryRepository Category { get; }
     IFavoriteRepository Favorite { get; }
     IBasketRepository Basket { get; }
+    IUserRoleRepository UserRole { get; }
     
     Task Save();
 

@@ -1,5 +1,6 @@
 ﻿using BooklyBookStoreApp.Application.DTOs.BasketDtos;
 using BooklyBookStoreApp.Application.Services;
+using BooklyBookStoreApp.Domain.Entitites;
 using BooklyBookStoreApp.Presentation.Abstractions;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -11,7 +12,7 @@ namespace BooklyBookStoreApp.Presentation.Controllers;
 [ApiController]
 [Route("api/[controller]")]
 
-[Authorize(AuthenticationSchemes ="Bearer")]
+[Authorize(AuthenticationSchemes = "Bearer",Roles ="Admin")]
 public class BasketController : ControllerBase
 {
     private readonly IBasketService _basketService;
