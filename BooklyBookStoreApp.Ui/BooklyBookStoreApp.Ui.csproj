@@ -27,9 +27,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Areas\ContactPage\" />
-    <Folder Include="Areas\AboutPage\" />
-    <Folder Include="Areas\NewFolder\" />
     <Folder Include="Views\Shared\Components\" />
   </ItemGroup>
 

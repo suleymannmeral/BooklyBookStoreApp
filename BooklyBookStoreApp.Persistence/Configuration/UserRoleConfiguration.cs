@@ -14,7 +14,6 @@ namespace BooklyBookStoreApp.Persistence.Configuration
         public void Configure(EntityTypeBuilder<UserRole> builder)
         {
             builder.ToTable("UserRoles");
-
         }
     }
 }

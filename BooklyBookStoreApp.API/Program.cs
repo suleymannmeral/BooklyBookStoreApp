@@ -28,12 +28,23 @@ builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddScoped<IBasketService, BasketService>();
 builder.Services.ConfigureOptions<JwtOptionsSetup>();
 builder.Services.ConfigureOptions<JwtBearerOptionsSetup>();
+builder.Services.AddScoped<IRoleService, RoleService>();
 
 builder.Services.AddScoped<IJwtProvider, JwtProvider>();
 
 builder.Services.AddAuthentication().AddJwtBearer();
 builder.Services.AddAuthorization();
 
+// CORS policy ekle
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowAll", policy =>
+    {
+        policy.AllowAnyOrigin()
+              .AllowAnyHeader()
+              .AllowAnyMethod();
+    });
+});
 
 // Connection string
 string connectionString = builder.Configuration.GetConnectionString("SqlServer");

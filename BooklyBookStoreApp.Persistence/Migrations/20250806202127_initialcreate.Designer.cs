@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BooklyBookStoreApp.Persistence.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20250804114528_mggg")]
-    partial class mggg
+    [Migration("20250806202127_initialcreate")]
+    partial class initialcreate
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

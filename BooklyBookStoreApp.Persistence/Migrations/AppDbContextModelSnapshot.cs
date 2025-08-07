@@ -321,11 +321,8 @@ namespace BooklyBookStoreApp.Persistence.Migrations
 
             modelBuilder.Entity("BooklyBookStoreApp.Domain.Entitites.UserRole", b =>
                 {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+                    b.Property<string>("Id")
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("RoleId")
                         .IsRequired()

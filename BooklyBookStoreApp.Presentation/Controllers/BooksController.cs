@@ -2,6 +2,7 @@
 using BooklyBookStoreApp.Application.Services;
 using BooklyBookStoreApp.Presentation.Abstractions;
 using BooklyBookStoreApp.Presentation.ActionFilters;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BooklyBookStoreApp.Presentation.Controllers;
@@ -19,7 +20,7 @@ public class BooksController:BaseApiController
         var result = await _manager.BookService.GetAllBooksWithCategoryNameAsync(false);
         return Ok(result);
     }
-
+    [Authorize(Roles = "Admin")]
     [ServiceFilter(typeof(ValidationFilterAttribute))]
     [HttpPost]
     public async Task<IActionResult> CreateBook([FromBody] CreateBookDto bookDto)
